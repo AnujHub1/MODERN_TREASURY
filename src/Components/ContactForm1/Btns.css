@@ -1,0 +1,17 @@
+.btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 130px;
+  margin-left: 100px;
+}
+.btnss a {
+  color: #ffffff;
+  background-color: #0a3f22;
+  width: 340px;
+  padding: 12px 30px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+}

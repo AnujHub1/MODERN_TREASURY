@@ -1,0 +1,14 @@
+.LoginPage {
+  display: flex;
+  padding: 1rem 3rem;
+  margin-left: 5rem;
+}
+.footer {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 50px;
+  margin-right: 100px;
+  color: #0f3a22;
+  font-size: 18px;
+}

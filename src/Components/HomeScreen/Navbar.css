@@ -1,0 +1,120 @@
+.navbar {
+  background: #d9d9d9;
+  height: 140px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 80px;
+  color: #0a3f22;
+}
+.navbar-links ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  height: 10rem;
+}
+
+.navbar-links ul li {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.navbar-links ul li:hover {
+  border-bottom: 5px solid #0a3f22;
+}
+
+.navbar-links .drop-down {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  height: 60px;
+  max-width: 750px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.5rem 1.5rem;
+  gap: 1.5rem;
+  top: 7rem;
+  transition: all 0.3s linear;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.navbar-links ul li:hover > .drop-down {
+  visibility: visible;
+  opacity: 1;
+  top: 10rem;
+  box-shadow: 0px 5px 8px grey;
+}
+
+.navbar-links .drop-down li {
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s linear;
+}
+.navbar-links .drop-down li a {
+  text-decoration: none;
+  white-space: nowrap;
+  color: #0a3f22;
+  font-weight: 600;
+  font-size: 20px;
+}
+.Tags {
+  margin: 5px;
+  padding: 0px 10px;
+  padding-right: 30px;
+  font-weight: 500;
+  height: 145px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 30px;
+  font-size: 20px;
+  color: #0a3f22;
+  font-weight: 700;
+}
+
+.Navbar-brand img {
+  padding: 40px 5px;
+}
+
+button:focus,
+button:hover {
+  background: var(--bg-primary);
+  cursor: pointer;
+}
+
+.navbar-links .nav-title {
+  color: #0a3f22;
+  font-weight: 600;
+  font-size: 20px;
+}
+.linkactive {
+  font-size: 20px;
+  background-color: #0a3f22;
+  padding: 5px 10px;
+  color: #ffffff;
+}

@@ -1,0 +1,24 @@
+.TalkTOUs-container {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.TalkTOUs-container p {
+  font-size: 20px;
+  color: #0a3f22;
+}
+.object-image {
+  padding: 10px;
+}
+
+.talkToUS-buttn {
+  background-color: #0a3f22;
+  color: #ffffff;
+  padding: 10px;
+  width: 120px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

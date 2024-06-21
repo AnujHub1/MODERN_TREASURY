@@ -1,0 +1,60 @@
+.contact-container {
+  margin-top: 40px;
+  width: 100vw;
+  background-color: #fff;
+}
+
+.contact-container a {
+  text-decoration: none;
+  color: black;
+  margin-left: 15px;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.ContactForm2 {
+  margin-left: 500px;
+  display: block;
+  justify-content: center;
+}
+.ContactinputDiv {
+  padding: 8px;
+}
+.ContactinputDiv input {
+  width: 450px;
+  padding: 12px;
+  border: 2px solid #0a3f22;
+  background-color: #fff;
+  color: black;
+
+  border-radius: 8px;
+}
+
+.ContactinputDiv label {
+  display: block;
+  padding: 5px;
+  /* margin-left: -12px; */
+  font-size: 18px;
+  font-weight: 500;
+}
+.msgBox input {
+  height: 50px;
+}
+
+.ContactinputDiv span {
+  color: red;
+}
+.contact-btn {
+  /* display: flex; */
+  margin-left: 180px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.contact-btn button {
+  background: #0a3f22;
+}

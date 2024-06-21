@@ -1,0 +1,29 @@
+.main {
+  margin-top: -70px;
+  height: 500px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.exploreBtn {
+  background-color: #0f3a22;
+  width: 163px;
+  font-size: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.main p {
+  font-size: 18px;
+  font-weight: bold;
+}
+.main div {
+  font-size: 30px;
+  font-weight: 400;
+}

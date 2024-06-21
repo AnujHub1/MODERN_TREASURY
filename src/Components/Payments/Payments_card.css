@@ -1,0 +1,47 @@
+.payment-card {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 310px;
+  width: 200px;
+  margin: 5px 40px;
+  overflow: hidden;
+  /* background-color: #fff; */
+}
+.payment-img {
+  height: 200px;
+  width: 180px;
+  margin-top: 12px;
+  margin-right: 20px;
+  /* position: cover; */
+}
+.paymnet-content {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+}
+.paymnet-content h2 {
+  font-weight: 500;
+  margin: 2px;
+  font-size: 16px;
+}
+.payment_Link {
+  background-color: #0a3f22;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 140px;
+  height: 40px;
+  margin-top: 10px;
+  padding: 2px;
+}
+.payment_Link a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+/* image 2 */
