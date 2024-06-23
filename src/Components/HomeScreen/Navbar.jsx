@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import vector from "../../assets/Vector.png";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import React, { useState } from "react";
 function Navbar() {
@@ -9,23 +10,23 @@ function Navbar() {
       title: "Platforms",
       cName: "Tags",
       dName: "drop-down",
-      path: "#platforms",
+      path: "/platforms",
       submenu: [
         {
           title: "Payments",
-          path: "/payments",
+          path: "/platforms/payments",
         },
         {
           title: "Ladgers",
-          path: "#ledgers",
+          path: "/platforms/ledgers",
         },
         {
           title: "Reconciliation",
-          path: "#reconciliation",
+          path: "/platforms/reconciliation",
         },
         {
           title: "Platform Overview",
-          path: "#platformoverview",
+          path: "/platforms/platformoverview",
         },
       ],
     },
@@ -33,23 +34,23 @@ function Navbar() {
       title: "Resources",
       cName: "Tags",
       dName: "drop-down",
-      path: "#resources",
+      path: "/resources",
       submenu: [
         {
           title: "Integrations",
-          path: "#integrations",
+          path: "/resources/integrations",
         },
         {
           title: "Knowledge Hub",
-          path: "#knowledgehuv",
+          path: "/resources/knowledgehuv",
         },
         {
           title: "Journal",
-          path: "#journal",
+          path: "/resources/journal",
         },
         {
           title: "Glossary",
-          path: "#glossary",
+          path: "/resources/glossary",
         },
       ],
     },
@@ -57,11 +58,11 @@ function Navbar() {
       title: "Documentation",
       cName: "Tags",
       dName: "drop-down",
-      path: "#documentation",
+      path: "/documentation",
       submenu: [
         {
           title: "API References",
-          path: "#apireferences",
+          path: "/documentation/apireferences",
         },
       ],
     },
@@ -69,11 +70,11 @@ function Navbar() {
       title: "Pricing",
       cName: "Tags",
       dName: "drop-down",
-      path: "#pricing",
+      path: "/pricing",
       submenu: [
         {
           title: "Pricing rates",
-          path: "#pricingrates",
+          path: "/pricing/pricingrates",
         },
       ],
     },
@@ -85,21 +86,21 @@ function Navbar() {
       submenu: [
         {
           title: "talk to us",
-          path: "/talktous",
+          path: "/contactus/talktous",
         },
         {
           title: "submit a query",
-          path: "/contact/submit",
+          path: "/contactus/submit",
         },
       ],
     },
   ];
 
-  let [isActive, setIsActive] = useState(false);
+  let [isActivate, setIsActivate] = useState(false);
 
   const handleClick = (index, event) => {
     // event.preventDefault();
-    setIsActive((prevState) => ({
+    setIsActivate((prevState) => ({
       [index]: !prevState[index],
     }));
   };
@@ -114,19 +115,24 @@ function Navbar() {
         <ul>
           {Items.map((item, index) => (
             <li className={item.cName}>
-              <Link
+              <NavLink
                 to={item.path}
                 key={index}
-                onClick={(event) => handleClick(index, event)}
-                className={isActive[index] ? "linkactive" : "nav-title"}
+                // onClick={(event) => handleClick(index, event)}
+                // className={isActive[index] ? "linkactive" : "nav-title"}
+                className={({ isActive }) =>
+                  isActive ? "linkactive" : "nav-title"
+                }
               >
                 {item.title}
-              </Link>
+              </NavLink>
               {item.submenu && (
                 <ul className={item.dName}>
                   {item.submenu.map((submenuItem, subIndex) => (
                     <li key={subIndex}>
-                      <Link to={submenuItem.path}>{submenuItem.title}</Link>
+                      <NavLink to={submenuItem.path}>
+                        {submenuItem.title}
+                      </NavLink>
                     </li>
                   ))}
                 </ul>

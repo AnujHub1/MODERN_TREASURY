@@ -3,7 +3,7 @@ import "./Btns.css";
 function Btns({ data }) {
   return (
     <div className="btnss">
-      <Link to="/contact/submit">{data}</Link>
+      <Link to="/contactus/submit">{data}</Link>
     </div>
   );
 }

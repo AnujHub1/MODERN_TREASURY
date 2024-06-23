@@ -15,7 +15,7 @@ const cards = [
     description: "Gain access to growth capital with Modern Treasury.",
     buttonText: "Learn more",
     imageUrl: "../../../parafin.png",
-    path: "/payments/parafin",
+    path: "/platforms/payments/parafin",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const cards = [
     description: "Re-imagine expense management with Modern Treasury.",
     buttonText: "Learn more",
     imageUrl: "../../../navan.png",
-    path: "#navan",
+    path: "/platforms/payments/navan",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const cards = [
     description: "Faster payout times and improved user experience.",
     buttonText: "Learn more",
     imageUrl: "../../../outdoorsy.png",
-    path: "#outdoorsy",
+    path: "/platforms/payments/outdoorsy",
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const cards = [
     description: "Unlock new revenue by entering the flow of funds.",
     buttonText: "Learn more",
     imageUrl: "../../../c2fo.png",
-    path: "#c2fo",
+    path: "/platforms/payments/c2fo",
   },
 ];
 

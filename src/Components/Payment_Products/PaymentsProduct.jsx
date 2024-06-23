@@ -39,7 +39,7 @@ const payProduct = [
   {
     title: "C2FO",
     description:
-      "C2FO is a first-of-its-kind, on-demand capital platform that dramatically improves B2B cash flow for businesses. Using an innovative, technology-driven model, C2FO makes standard loans (and their burdensome credit checks) unnecessary, unlocking faster business operations and increased flexibility. C2FO partnered with Modern Treasury to deliver a B2B card program that not only speeds up payments but also helps improve cash management, allowing them to orchestrate payments between several counterparties at scale.",
+      "C2FO is a first-of-its-kind, on-demand capital platform that dramatically improves B2B cash flow for businesses. Using an innovative, technology-driven model, C2FO makes standard loans (and their burdensome credit checks) unnecessary, unlocking faster business operations and increased flexibility. C2FO partnered with Modern Treasury to deliver a B2B card program that not only speeds up payments but also helps improve cash management, allowing them to orchestrate payments between several counterparties at scale.",
     useCases: "Dynamic Discounting",
     products: "Payments",
     paymentMethods: "ACH,Wire",
@@ -50,27 +50,24 @@ const payProduct = [
 ];
 export default function PaymentsProduct() {
   const { title } = useParams();
-  const product = payProduct.find(
-    (p) => p.title.toLowerCase() === title.toLowerCase()
-  );
-
-  if (!product) {
-    return <div>Product not found</div>;
-  }
+  console.log(title);
   return (
     <>
       {payProduct.map((product, index) => {
         return (
-          <Payment_Prod
-            key={index}
-            title={product.title}
-            description={product.description}
-            useCases={product.useCases}
-            paymentMethods={product.paymentMethods}
-            location={product.location}
-            link={product.link}
-            imageUrl={product.imageUrl}
-          />
+          product.title.toLowerCase() === title && (
+            <Payment_Prod
+              key={index}
+              title={product.title}
+              description={product.description}
+              useCases={product.useCases}
+              products={product.products}
+              paymentMethods={product.paymentMethods}
+              location={product.location}
+              link={product.link}
+              imageUrl={product.imageUrl}
+            />
+          )
         );
       })}
     </>

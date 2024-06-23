@@ -10,6 +10,7 @@ import Home from "./Components/HomeScreen/Home";
 import Payments from "./Components/Payments/Payments";
 import Payment_Prod from "./Components/Payment_Products/Payment_Prod";
 import PaymentsProduct from "./Components/Payment_Products/PaymentsProduct";
+import LadgersHome from "./Components/Ledgers/LadgersHome";
 import "./App.css";
 import * as React from "react";
 
@@ -75,7 +76,7 @@ function App() {
       ),
     },
     {
-      path: "/contact/submit",
+      path: "/contactus/submit",
       element: (
         <>
           <Navbar></Navbar>
@@ -86,7 +87,7 @@ function App() {
       ),
     },
     {
-      path: "/talktous",
+      path: "/contactus/talktous",
       element: (
         <>
           <div className="container2">
@@ -96,7 +97,7 @@ function App() {
       ),
     },
     {
-      path: "/payments",
+      path: "platforms/payments",
       element: (
         <div className="container2">
           <Navbar></Navbar>
@@ -105,12 +106,21 @@ function App() {
       ),
     },
     {
-      path: "/payments/:title",
+      path: "/platforms/payments/:title",
 
       element: (
         <div className="container2">
           <Navbar></Navbar>
           <PaymentsProduct />
+        </div>
+      ),
+    },
+    {
+      path: "/platforms/ledgers",
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <LadgersHome></LadgersHome>
         </div>
       ),
     },
