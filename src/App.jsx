@@ -145,14 +145,6 @@ function App() {
     //     </div>
     //   ),
     // },
-    {
-      path: "/form",
-      element: (
-        <>
-          <GeneralForm />
-        </>
-      ),
-    },
   ]);
 
   return (
