@@ -26,7 +26,7 @@ export default function LadgersHome() {
         <div className="LadgerMain">
           <div className="subLedger">
             <img src={genralImage} alt="general" />
-            <Link to="/genenral">General</Link>
+            <Link to="/platforms/ledgers/general">General</Link>
           </div>
 
           <div className="subLedger">

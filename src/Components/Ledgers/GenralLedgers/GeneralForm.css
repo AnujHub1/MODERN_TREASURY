@@ -1,0 +1,40 @@
+.general-form-container {
+  background-color: #ffffff;
+  height: 520px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  border-radius: 8px;
+}
+.form-head p {
+  font-size: 17px;
+  font-weight: 600;
+}
+.form-footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .form-footer button {
+  font-size: 17px;
+  border-radius: 6px;
+  width: 130px;
+  height: 50px;
+  background-color: #0a3f22;
+  font-weight: 520;
+  color: white;
+  border: 0 none;
+  cursor: pointer;
+  padding: 12px 10px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hideButton {
+  display: none;
+} */

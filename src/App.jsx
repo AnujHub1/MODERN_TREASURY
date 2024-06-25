@@ -11,6 +11,9 @@ import Payments from "./Components/Payments/Payments";
 import Payment_Prod from "./Components/Payment_Products/Payment_Prod";
 import PaymentsProduct from "./Components/Payment_Products/PaymentsProduct";
 import LadgersHome from "./Components/Ledgers/LadgersHome";
+import GeneralLedgers from "./Components/Ledgers/GenralLedgers/GeneralLedgers";
+import GeneralForm from "./Components/Ledgers/GenralLedgers/GeneralForm";
+
 import "./App.css";
 import * as React from "react";
 
@@ -122,6 +125,32 @@ function App() {
           <Navbar></Navbar>
           <LadgersHome></LadgersHome>
         </div>
+      ),
+    },
+    {
+      path: "/platforms/ledgers/general",
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <GeneralLedgers></GeneralLedgers>
+        </div>
+      ),
+    },
+    // {
+    //   path: "/platforms/ledgers/general/create",
+    //   element: (
+    //     <div className="container2">
+    //       <Navbar></Navbar>
+    //       <GeneralLedgers></GeneralLedgers>
+    //     </div>
+    //   ),
+    // },
+    {
+      path: "/form",
+      element: (
+        <>
+          <GeneralForm />
+        </>
       ),
     },
   ]);
