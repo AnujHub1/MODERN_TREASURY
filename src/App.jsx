@@ -12,8 +12,10 @@ import Payment_Prod from "./Components/Payment_Products/Payment_Prod";
 import PaymentsProduct from "./Components/Payment_Products/PaymentsProduct";
 import LadgersHome from "./Components/Ledgers/LadgersHome";
 import GeneralLedgers from "./Components/Ledgers/GenralLedgers/GeneralLedgers";
-import GeneralForm from "./Components/Ledgers/GenralLedgers/GeneralForm";
-
+import CashLedger from "./Components/Ledgers/CashLedger/CashLedger";
+import SalesLedger from "./Components/Ledgers/SalesLedger/SalesLedger";
+import PurchaseLedger from "./Components/Ledgers/PurchaseLedger/PurchaseLedger";
+import Subside from "./Components/Ledgers/SubSidnary/Subside";
 import "./App.css";
 import * as React from "react";
 
@@ -24,6 +26,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import Reconciliation from "./Components/Reconciliation/Reconciliation";
 
 function App() {
   const router = createBrowserRouter([
@@ -145,6 +148,52 @@ function App() {
     //     </div>
     //   ),
     // },
+
+    {
+      path: "/platforms/ledgers/cash",
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <CashLedger></CashLedger>
+        </div>
+      ),
+    },
+    {
+      path: "/platforms/ledgers/sales",
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <SalesLedger />
+        </div>
+      ),
+    },
+    {
+      path: "/platforms/ledgers/purchase",
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <PurchaseLedger />
+        </div>
+      ),
+    },
+    {
+      path: "/platforms/ledgers/subsidiary",
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <Subside />
+        </div>
+      ),
+    },
+    {
+      path: "/platforms/reconciliation",
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <Reconciliation />
+        </div>
+      ),
+    },
   ]);
 
   return (

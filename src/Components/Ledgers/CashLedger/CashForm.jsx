@@ -1,0 +1,80 @@
+import React, { useState } from "react";
+import "./CashForm.css";
+import Transaction from "./Transaction.jsx";
+import CustomerInfo from "./CustomerInfo.jsx";
+
+export default function CashForm() {
+  const [page, setPage] = useState(0);
+  const [cashData, setCashData] = useState({
+    transactionId: "",
+    TName: "",
+    PaymentType: "",
+    date: "",
+    Amount: "",
+    cutomerId: "",
+    customerName: "",
+    contactN: "",
+    email: "",
+  });
+
+  const formTitle = [
+    "Step 1: Transaction Details",
+    "Step 2: Customer information",
+  ];
+
+  const PageDisplay = () => {
+    if (page == 0) {
+      return <Transaction cashData={cashData} setCashData={setCashData} />;
+    } else if (page == 1) {
+      return <CustomerInfo cashData={cashData} setCashData={setCashData} />;
+    }
+  };
+
+  return (
+    <div className="cash-form-container">
+      <div className="form-head">
+        <p>{formTitle[page]}</p>
+      </div>
+      <div className="form-body">{PageDisplay()}</div>
+      <div className="form-footer">
+        <button
+          style={styles}
+          onClick={() => {
+            alert("saved");
+            console.log(cashData);
+          }}
+        >
+          Save
+        </button>
+        <button
+          onClick={() => {
+            if (page == formTitle.length - 1) {
+              disabled;
+            }
+            setPage((currPage) => currPage + 1);
+          }}
+          style={page == 1 ? { display: "none" } : styles}
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  );
+}
+
+let styles = {
+  fontSize: "19px",
+  borderRadius: "10px",
+  width: "130px",
+  height: "45px",
+  background: "#0a3f22",
+  fontWeight: "520",
+  color: "white",
+  border: "0 none",
+  cursor: "pointer",
+  padding: "12px 10px",
+  margin: "5px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};

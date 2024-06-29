@@ -1,0 +1,32 @@
+.recon-container {
+  height: 100vh;
+  width: 100vw;
+}
+.GC {
+  background-color: #649176;
+}
+.recon-link {
+  font-size: 22px;
+  text-decoration: none;
+  color: black;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.recon-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.leftside {
+  height: 500px;
+}
+.leftside img {
+  height: 430px;
+}
+.rightside {
+  height: 450px;
+}

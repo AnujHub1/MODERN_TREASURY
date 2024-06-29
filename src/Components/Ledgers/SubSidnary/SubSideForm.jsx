@@ -1,18 +1,23 @@
-import React from "react";
-import { useState } from "react";
-import "./GeneralForm.css";
-import BasicInfo from "./BasicInfo";
-import AccountDetail from "./AccountDetail";
+import React, { useState } from "react";
+import "./SubSideForm.css";
+import CustomerInfo from "../CashLedger/CustomerInfo";
+import AccountDetail from "../GenralLedgers/AccountDetail";
 import Transaction from "./Transaction";
+import Vendor from "./Vendor";
 
-export default function GeneralForm() {
+export default function SubSideForm() {
   const [page, setPage] = useState(0);
+
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    contactNumber: "",
+    cutomerId: "",
+    customerName: "",
+    contactN: "",
     email: "",
-    companyName: "",
+    vendorId: "",
+    vendorName: "",
+    Vcontact: "",
+    Vemail: "",
+    texinfo: "",
     TaxNumber: "",
     AccountN: "",
     AccountHolder: "",
@@ -22,71 +27,69 @@ export default function GeneralForm() {
     date: "",
     Amount: "",
   });
+
   const formtitle = [
-    "Steo 1 : Basic Information",
-    "Step 2 : Account Details",
-    "Step 3 : Transaction Details",
+    "Steo 1 : Customer Details",
+    "Step 2 : Vendor Details",
+    "Step 3 : Account Details",
+    "Step 4 : Transaction Details",
   ];
 
   const PageDisplay = () => {
     if (page == 0) {
-      return <BasicInfo formData={formData} setFormData={setFormData} />;
+      return <CustomerInfo cashData={formData} setCashData={setFormData} />;
     } else if (page == 1) {
+      return <Vendor vendorData={formData} setvendorData={setFormData} />;
+    } else if (page == 2) {
       return <AccountDetail formData={formData} setFormData={setFormData} />;
     } else {
       return <Transaction formData={formData} setFormData={setFormData} />;
     }
   };
+
   return (
-    <div className="general-form-container">
+    <div className="subside-form-container">
       <div className="form-head">
-        <p>
-          {page == formtitle.length
-            ? formtitle[formtitle.length - 1]
-            : formtitle[page]}
-        </p>
+        <p>{formtitle[page]}</p>
       </div>
       <div className="form-body">{PageDisplay()}</div>
       <div className="form-footer">
         <button
-          disabled={page == 0}
+          style={page == 1 ? { display: "none" } : styles}
           onClick={() => {
             if (page == formtitle.length - 1) {
               alert("save");
               console.log(formData);
+              return (
+                <Transaction cashData={formData} setCashData={setFormData} />
+              );
+              disabled;
             }
-            {
-              setPage((currPage) => currPage + 1);
-            }
+            setPage((currPage) => currPage + 1);
           }}
-          style={page == 0 ? { display: "none" } : styles}
         >
-          {page == 1 ? "Next" : "Save"}
+          {page == 2 ? "next" : "save"}
         </button>
         <button
           onClick={() => {
             if (page == formtitle.length - 1) {
-              alert("form submited");
               console.log(formData);
-            } else {
-              setPage((currPage) => currPage + 1);
+              return <Transaction />;
             }
+            if (page == 2) {
+              console.log(formData);
+              return <AccountDetail />;
+            }
+            setPage((currPage) => currPage + 1);
           }}
           style={styles}
         >
-          {page == 0
-            ? "Next"
-            : page == 1
-            ? "Add another"
-            : formtitle.length - 1
-            ? "Add another"
-            : "Next"}
+          {page <= 1 ? "next" : "add another"}
         </button>
       </div>
     </div>
   );
 }
-
 let styles = {
   fontSize: "19px",
   borderRadius: "10px",

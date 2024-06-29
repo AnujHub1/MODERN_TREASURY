@@ -31,21 +31,21 @@ export default function LadgersHome() {
 
           <div className="subLedger">
             <img src={subsidnaryImage} alt="SubSidary" />
-            <Link to="/subsidiary">Subsidiary</Link>
+            <Link to="/platforms/ledgers/subsidiary">Subsidiary</Link>
           </div>
 
           <div className="subLedger" style={{ grid: 4 }}>
             <img src={cashImage} alt="Cash" />
-            <Link to="/cash">Cash</Link>
+            <Link to="/platforms/ledgers/cash">Cash</Link>
           </div>
 
           <div className="subLedger sub1">
             <img src={salesImage} alt="Sales" />
-            <Link to="/sales">Sales</Link>
+            <Link to="/platforms/ledgers/sales">Sales</Link>
           </div>
           <div className="subLedger sub1">
             <img src={purchaseImage} alt="purchase" />
-            <Link to="/purchase">Purchase</Link>
+            <Link to="/platforms/ledgers/purchase">Purchase</Link>
           </div>
         </div>
       </div>
