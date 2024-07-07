@@ -1,0 +1,125 @@
+.integration-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.integration-link {
+  font-size: 22px;
+  text-decoration: none;
+  color: black;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.integration-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inte_leftSide {
+}
+
+.centerSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.subcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.getP {
+  width: 800px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: start;
+}
+
+.centerImage {
+  height: 350px;
+  width: 350px;
+}
+
+.inte_rightside {
+  height: 350px;
+}
+.inte_rightside img {
+  height: 450px;
+}
+.inte_centerSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.inte_getP {
+  width: 800px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: -5px;
+}
+.inte_link {
+  background-color: #0a3f22;
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.inte_centerSide h3 {
+  font-size: 20px;
+  color: #0a3f22;
+}
+.bank-sub-inte {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.bank_link {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #649176;
+  text-decoration: none;
+  height: 160px;
+  width: 160px;
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: 1px 5px 10px rgb(34, 31, 31);
+  cursor: pointer;
+}
+.bank_link a {
+  padding: 10px;
+  opacity: 1;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.international {
+  gap: 40px;
+}

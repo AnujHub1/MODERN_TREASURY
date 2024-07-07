@@ -21,12 +21,14 @@
   align-items: center;
   justify-content: space-between;
 }
-.leftside {
-  height: 500px;
+.recon_leftside {
+  height: 700px;
 }
-.leftside img {
-  height: 430px;
+
+.recon_rightside {
+  height: 650px;
 }
-.rightside {
+
+.recon_rightside img {
   height: 450px;
 }

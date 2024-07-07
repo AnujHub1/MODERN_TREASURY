@@ -16,6 +16,17 @@ import CashLedger from "./Components/Ledgers/CashLedger/CashLedger";
 import SalesLedger from "./Components/Ledgers/SalesLedger/SalesLedger";
 import PurchaseLedger from "./Components/Ledgers/PurchaseLedger/PurchaseLedger";
 import Subside from "./Components/Ledgers/SubSidnary/Subside";
+import Reconciliation from "./Components/Reconciliation/Reconciliation";
+import MultiwayForm from "./Components/Reconciliation/Multiway/MultiwayForm";
+import MultiRecon from "./Components/Reconciliation/Multiway/MultiRecon";
+import BatchPayment from "./Components/Reconciliation/BatchPayment/BatchPayment";
+import Intercompany from "./Components/Reconciliation/Intercom/Intercompany";
+import PlatformOver from "./Components/PlatformOverview/PlatformOver";
+import ApiR from "./Components/APIReference/ApiR";
+import PricingRates from "./Components/PriningRates/PricingRates";
+import Integration from "./Components/Integration/Integration";
+import Knowledgehub from "./Components/KnowledgeHub/Knowledgehub";
+
 import "./App.css";
 import * as React from "react";
 
@@ -26,7 +37,6 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import Reconciliation from "./Components/Reconciliation/Reconciliation";
 
 function App() {
   const router = createBrowserRouter([
@@ -139,6 +149,7 @@ function App() {
         </div>
       ),
     },
+
     // {
     //   path: "/platforms/ledgers/general/create",
     //   element: (
@@ -194,6 +205,87 @@ function App() {
         </div>
       ),
     },
+    {
+      path: "/platforms/reconciliation/multiway",
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <MultiRecon />
+        </div>
+      ),
+    },
+    {
+      path: "/platforms/reconciliation/batch",
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <BatchPayment />
+        </div>
+      ),
+    },
+    {
+      path: "/platforms/reconciliation/intercompany",
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <Intercompany />
+        </div>
+      ),
+    },
+    {
+      path: "/platforms/platformoverview",
+      element: (
+        <div className="container2">
+          <Navbar />
+          <PlatformOver />
+        </div>
+      ),
+    },
+    {
+      path: "/documentation/apireferences",
+      element: (
+        <div className="container2">
+          <Navbar />
+          <ApiR />
+        </div>
+      ),
+    },
+    {
+      path: "/pricing/pricingrates",
+      element: (
+        <div className="container2">
+          <Navbar />
+          <PricingRates />
+        </div>
+      ),
+    },
+    {
+      path: "/resources/integrations",
+      element: (
+        <div className="container2">
+          <Navbar />
+          <Integration />
+        </div>
+      ),
+    },
+    {
+      path: "resources/knowledgehuv",
+      element: (
+        <div className="container2">
+          <Navbar />
+          <Knowledgehub />
+        </div>
+      ),
+    },
+    // {
+    //   path: "/platforms/reconciliation/explore",
+    //   element: (
+    //     <div className="container2">
+    //       <Navbar></Navbar>
+    //       <ReconnciliationExplore />
+    //     </div>
+    //   ),
+    // },
   ]);
 
   return (

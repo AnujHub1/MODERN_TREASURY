@@ -1,0 +1,85 @@
+.Head_Form {
+  height: 550px;
+}
+.Form_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 10px; */
+}
+.inter_form_container {
+  background-color: #ffffff;
+  height: 480px;
+  width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  /* gap: 10px; */
+  border-radius: 8px;
+}
+.Batch-form-body {
+  margin-top: 50px;
+}
+.FB {
+  background-color: #ffffff;
+  max-height: 520px;
+  min-height: 350px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.multiway-form-container {
+  background-color: #ffffff;
+  height: 480px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  border-radius: 8px;
+}
+
+.batch-form-container {
+  background-color: #ffffff;
+  height: 500px;
+  width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  /* gap: 10px; */
+  border-radius: 8px;
+}
+.Batch-form-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .Head {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #649176;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.form-head {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 0%;
+}
+.form-footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

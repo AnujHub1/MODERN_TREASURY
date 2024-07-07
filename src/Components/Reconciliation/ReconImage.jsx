@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import reconImage from "../../assets/reconciliation.png";
 
-export default function ReconImage() {
+export default function ReconImage({ page, setPage }) {
   return (
     <div
       className="centarImg"
@@ -22,7 +22,7 @@ export default function ReconImage() {
       </h2>
       <img src={reconImage} alt="reconciliation image" />
       <Link
-        to="/platforms/recociliation"
+        to="/platforms/reconciliation"
         style={{
           backgroundColor: "#0a3f22",
           textDecoration: "none",
@@ -31,6 +31,9 @@ export default function ReconImage() {
           borderRadius: "4px",
           fontSize: "19px",
           marginTop: "20px",
+        }}
+        onClick={() => {
+          setPage((currpage) => currpage + 1);
         }}
       >
         Explore

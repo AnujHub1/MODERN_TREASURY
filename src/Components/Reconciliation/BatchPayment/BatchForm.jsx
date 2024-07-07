@@ -1,0 +1,130 @@
+import React, { useState } from "react";
+import "../Multiway/MultiwayForm.css";
+import BTransaction from "./BTransaction";
+import EntityType from "../Multiway/EntityType";
+import Indivisual from "./indivisual";
+import BusinessEntity from "./BatchBusiness";
+import Invoice from "./BatchInvoice";
+import Saved from "../Multiway/Saved";
+import BatchDetail from "./BatchDetail";
+
+export default function BatchForm() {
+  const [page, setPage] = useState(0);
+  const [formData, setFormdata] = useState({
+    transactionId: "",
+    TName: "",
+    PaymentType: "",
+    date: "",
+    Amount: "",
+    individual_ID: "",
+    ind_Name: "",
+    ind_contact: "",
+    ind_email: "",
+    registration: "",
+    busi_Name: "",
+    busi_contact: "",
+    busi_email: "",
+    invoiceNum: "",
+    invoiceId: "",
+    invose_Type: "",
+    Tran_Date: "",
+  });
+  const formTitle = [
+    "Step 1: Batch Details",
+    "Step 2: Transaction Details",
+    "Step 3: Select Entity Type",
+    "Step 3: Entity Details Indivisual",
+    "Step 3: Entity Details Business",
+    "Step 4: Invoice Details",
+  ];
+  const pageDisplay = () => {
+    if (page == 0) {
+      return <BatchDetail cashData={formData} setCashData={setFormdata} />;
+    } else if (page == 1) {
+      return <BTransaction cashData={formData} setCashData={setFormdata} />;
+    } else if (page == 2) {
+      return <EntityType page={page} setPage={setPage} />;
+    } else if (page == 3) {
+      return <Indivisual formData={formData} setFormdata={setFormdata} />;
+    } else if (page == 4) {
+      return <BusinessEntity formData={formData} setFormdata={setFormdata} />;
+    } else if (page == 5) {
+      return <Invoice formData={formData} setFormdata={setFormdata} />;
+    } else if (page == 6) {
+      return <Saved page={page} setPage={setPage} />;
+    }
+  };
+
+  return (
+    <div
+      className={`${
+        page == 2
+          ? "FB"
+          : page == 6
+          ? "multiway-form-container"
+          : "batch-form-container"
+      }`}
+    >
+      <div className="form-head">
+        <p>{formTitle[page]}</p>
+      </div>
+      <div className="Batch-form-body">{pageDisplay()}</div>
+      <div className="form-footer">
+        <button
+          style={page <= 5 ? { display: "none" } : styles}
+          onClick={() => {
+            if (page == formTitle.length - 1) {
+              alert("saved");
+              console.log(formData);
+              // disabled;
+            } else if (page == formTitle.length) {
+              return setPage(-1);
+            }
+          }}
+        >
+          {page == formTitle.length ? "Yes" : "next"}
+        </button>
+        <button
+          style={page == 2 ? { display: "none" } : styles}
+          onClick={() => {
+            if (page == 3) {
+              setPage((currpage) => currpage + 1);
+            }
+            if (page == formTitle.length - 1) {
+              alert("saved");
+              console.log(formData);
+            }
+            if (page == formTitle.length) {
+              setPage(-1);
+            }
+
+            setPage((currpage) => currpage + 1);
+          }}
+        >
+          {page == formTitle.length ? "Exit" : "next"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+let styles = {
+  fontSize: "19px",
+  borderRadius: "10px",
+  width: "130px",
+  height: "45px",
+  background: "#0a3f22",
+  fontWeight: "520",
+  color: "white",
+  border: "0 none",
+  cursor: "pointer",
+  padding: "12px 10px",
+  display: "flex",
+  margin: "10px",
+  justifyContent: "center",
+  alignItems: "center",
+};
+
+let styles2 = {
+  display: "none",
+};

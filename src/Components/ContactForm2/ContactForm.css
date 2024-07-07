@@ -57,4 +57,7 @@
 }
 .contact-btn button {
   background: #0a3f22;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 5px;
 }

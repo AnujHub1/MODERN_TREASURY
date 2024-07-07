@@ -1,0 +1,45 @@
+.pricing-container {
+  height: 100%;
+}
+.pricing1 {
+  height: 35%;
+  background-color: #9a9898;
+  box-shadow: 5px 5px 5px #9a9898;
+}
+.pricing2 {
+  height: 100%;
+}
+.subPricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 0.5;
+}
+.subPrice {
+  font-size: 20px;
+  width: 800px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.subPrice p {
+  text-align: start;
+  padding-left: 60px;
+}
+.pricing-explore {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #0a3f22;
+}
+.pricing-explore a {
+  font-size: 17px;
+  text-align: center;
+  color: #0a3f22;
+  text-decoration: none;
+  font-weight: 500;
+}

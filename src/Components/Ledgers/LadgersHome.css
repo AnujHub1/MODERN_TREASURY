@@ -38,6 +38,15 @@
   font-weight: 500;
   margin: 30px auto;
 }
+.rec-main {
+  width: 810px;
+  height: 333px;
+  background-color: #ddd5bb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
 .LadgerMain {
   width: 810px;
   height: 333px;
@@ -49,6 +58,7 @@
   margin: 25px auto;
   border-radius: 8px;
 }
+
 .subLedger {
   margin: 25px auto;
   /* padding: 5px; */

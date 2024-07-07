@@ -23,7 +23,7 @@ function SignUpForm() {
             />
           </div>
 
-          <button type="submit" className="Btn">
+          <button type="submit" className="sign_btn">
             Sign Up
           </button>
         </form>

@@ -15,7 +15,7 @@ function LoginForm() {
           <input id="password" type="password" />
         </div>
 
-        <button type="submit" className="loginBtn">
+        <button type="submit" className="login-Btn">
           Login
         </button>
 

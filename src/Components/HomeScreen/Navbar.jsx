@@ -17,7 +17,7 @@ function Navbar() {
           path: "/platforms/payments",
         },
         {
-          title: "Ladgers",
+          title: "Ledgers",
           path: "/platforms/ledgers",
         },
         {
