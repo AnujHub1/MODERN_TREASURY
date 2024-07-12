@@ -102,11 +102,11 @@
   padding: 40px 5px;
 }
 
-button:focus,
+/* button:focus,
 button:hover {
   background: var(--bg-primary);
   cursor: pointer;
-}
+} */
 
 .navbar-links .nav-title {
   color: #0a3f22;

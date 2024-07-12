@@ -42,7 +42,7 @@ function Navbar() {
         },
         {
           title: "Knowledge Hub",
-          path: "/resources/knowledgehuv",
+          path: "/resources/knowledgehub",
         },
         {
           title: "Journal",

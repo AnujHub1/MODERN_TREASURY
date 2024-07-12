@@ -1,6 +1,5 @@
 import Page from "./Components/Login/Page";
-import SignUp from "./Components/SignUp/SignUp";
-import SignUpForm from "./Components/Signup2/SignUpForm";
+import SignUpForm from "./Components/SignUp/SignUpForm";
 import HomeScreen from "./Components/HomeScreen/HomeScreen";
 import Navbar from "./Components/HomeScreen/Navbar";
 import Contact from "./Components/ContactForm1/Contact";
@@ -26,7 +25,7 @@ import ApiR from "./Components/APIReference/ApiR";
 import PricingRates from "./Components/PriningRates/PricingRates";
 import Integration from "./Components/Integration/Integration";
 import Knowledgehub from "./Components/KnowledgeHub/Knowledgehub";
-
+import SubPages from "./Components/KnowledgeHub/SubPages";
 import "./App.css";
 import * as React from "react";
 
@@ -37,6 +36,8 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import Glossary from "./Components/Glossary/Glossary";
+import Journal from "./Components/Journal/Journal";
 
 function App() {
   const router = createBrowserRouter([
@@ -70,10 +71,6 @@ function App() {
     {
       path: "/login",
       element: <Page />,
-    },
-    {
-      path: "/signupnext",
-      element: <SignUp />,
     },
 
     {
@@ -269,7 +266,7 @@ function App() {
       ),
     },
     {
-      path: "resources/knowledgehuv",
+      path: "/resources/knowledgehub",
       element: (
         <div className="container2">
           <Navbar />
@@ -286,6 +283,34 @@ function App() {
     //     </div>
     //   ),
     // },
+    {
+      path: "/resources/knowledgehub/:title",
+
+      element: (
+        <div className="container2">
+          <Navbar></Navbar>
+          <SubPages />
+        </div>
+      ),
+    },
+    {
+      path: "/resources/glossary",
+      element: (
+        <div className="conatiner2">
+          <Navbar />
+          <Glossary />
+        </div>
+      ),
+    },
+    {
+      path: "/resources/journal",
+      element: (
+        <div className="container2">
+          <Navbar />
+          <Journal />
+        </div>
+      ),
+    },
   ]);
 
   return (
