@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useForm, FormProvider } from "react-hook-form";
 import Transaction from "../../Ledgers/CashLedger/Transaction";
 import EntityType from "./EntityType";
 import Indivisual from "./Indivisual";
@@ -10,6 +10,7 @@ import Saved from "./Saved";
 
 import "./MultiwayForm.css";
 export default function MultiwayForm() {
+  const methods = useForm();
   const [page, setPage] = useState(0);
   const [formData, setFormdata] = useState({
     transactionId: "",
@@ -55,45 +56,64 @@ export default function MultiwayForm() {
     "Step 4: Invoice Details",
   ];
 
+  const onSubmit = (data) => {
+    if (page === formTitle.length) {
+      console.log(data);
+      setPage(0);
+    } else if (page == 2) {
+      setPage((currPage) => currPage + 2);
+    } else {
+      setPage((currPage) => currPage + 1);
+      setFormdata({ ...formData, ...data });
+    }
+  };
+
   return (
-    <div className={`${page == 1 ? "FB" : "multiway-form-container"}`}>
-      <div className="form-head">
-        <p>{formTitle[page]}</p>
-      </div>
-      <div className="form-body">{pageDisplay()}</div>
-      <div className="form-footer">
-        <button
-          style={page <= 4 ? { display: "none" } : styles}
-          onClick={() => {
-            if (page == formTitle.length - 1) {
-              alert("saved");
-              console.log(formData);
-              // disabled;
-            }
-          }}
-        >
-          {page == formTitle.length ? "Yes" : "next"}
-        </button>
-        <button
-          style={page == 1 ? { display: "none" } : styles}
-          onClick={() => {
-            if (page == 2) {
-              setPage((currpage) => currpage + 1);
-            }
-            if (page == formTitle.length - 1) {
-              alert("saved");
-              console.log(formData);
-            }
-            if (page == formTitle.length) {
-              return <Transaction />;
-            }
-            setPage((currpage) => currpage + 1);
-          }}
-        >
-          {page == formTitle.length ? "Exit" : "next"}
-        </button>
-      </div>
-    </div>
+    <FormProvider {...methods}>
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className={`${page == 1 ? "FB" : "multiway-form-container"}`}
+      >
+        <div className="form-head">
+          <p>{formTitle[page]}</p>
+        </div>
+        <div className="form-body">{pageDisplay()}</div>
+        <div className="form-footer">
+          <button
+            style={page <= 4 ? { display: "none" } : styles}
+            // onClick={() => {
+            //   if (page == formTitle.length - 1) {
+            //     alert("saved");
+            //     console.log(formData);
+            //     // disabled;
+            //   }
+            // }}
+            type="submit"
+          >
+            {page == formTitle.length ? "Yes" : "next"}
+          </button>
+          <button
+            style={page == 1 ? { display: "none" } : styles}
+            // onClick={() => {
+            //   if (page == 2) {
+            //     setPage((currpage) => currpage + 1);
+            //   }
+            //   if (page == formTitle.length - 1) {
+            //     alert("saved");
+            //     console.log(formData);
+            //   }
+            //   if (page == formTitle.length) {
+            //     return <Transaction />;
+            //   }
+            //   setPage((currpage) => currpage + 1);
+            // }}
+            type="submit"
+          >
+            {page == formTitle.length ? "Exit" : "next"}
+          </button>
+        </div>
+      </form>
+    </FormProvider>
   );
 }
 let styles = {

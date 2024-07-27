@@ -1,6 +1,11 @@
 import React from "react";
+import { useFormContext } from "react-hook-form";
 
 export default function Transaction({ formData, setFormData }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   return (
     <div className="Transaction-container">
       <div className="transaction-subConatiner">
@@ -8,6 +13,9 @@ export default function Transaction({ formData, setFormData }) {
           Transaction ID<span>*</span>
         </label>
         <input
+          {...register("transactionId", {
+            required: "id is required",
+          })}
           id="transaction"
           type="text"
           name="transactionId"
@@ -17,12 +25,16 @@ export default function Transaction({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.transactionId && (
+        <p className="error-para">{errors.transactionId.message}</p>
+      )}
 
       <div className="transaction-subConatiner">
         <label htmlFor="Name">
           Transaction Name<span>*</span>
         </label>
         <input
+          {...register("TName", { required: "name is required" })}
           id="Name"
           type="text"
           name="TName"
@@ -32,12 +44,16 @@ export default function Transaction({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.TName && <p className="error-para">{errors.TName.message}</p>}
 
       <div className="transaction-subConatiner">
         <label htmlFor="PaymentType">
           Description<span>*</span>
         </label>
         <input
+          {...register("PaymentType", {
+            required: "payment type is required",
+          })}
           id="PaymentType"
           type="text"
           name="PaymentType"
@@ -47,12 +63,16 @@ export default function Transaction({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.PaymentType && (
+        <p className="error-para">{errors.PaymentType.message}</p>
+      )}
 
       <div className="transaction-subConatiner">
         <label htmlFor="Date">
           Date of Invoice<span>*</span>
         </label>
         <input
+          {...register("date", { required: "date is required" })}
           id="Date"
           type="Date"
           name="date"
@@ -62,12 +82,16 @@ export default function Transaction({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.date && <p className="error-para">{errors.date.message}</p>}
 
       <div className="transaction-subConatiner">
         <label htmlFor="Amount">
           Amount<span>*</span>
         </label>
         <input
+          {...register("Amount", {
+            required: "amount is required",
+          })}
           id="Amount"
           type="number"
           name="Amount"
@@ -77,6 +101,7 @@ export default function Transaction({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.Amount && <p className="error-para">{errors.Amount.message}</p>}
     </div>
   );
 }

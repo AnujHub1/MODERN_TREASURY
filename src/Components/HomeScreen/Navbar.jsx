@@ -1,9 +1,10 @@
 import "./Navbar.css";
+import menuRef from "react";
 import vector from "../../assets/Vector.png";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-
-import React, { useState } from "react";
+import nav_dropdown from "../../assets/nav_dropdown.png";
+import React, { useState, useRef } from "react";
 function Navbar() {
   let Items = [
     {
@@ -97,6 +98,7 @@ function Navbar() {
   ];
 
   let [isActivate, setIsActivate] = useState(false);
+  const menuRef = useRef();
 
   const handleClick = (index, event) => {
     // event.preventDefault();
@@ -104,14 +106,24 @@ function Navbar() {
       [index]: !prevState[index],
     }));
   };
+
+  const dropdown_toggel = (e) => {
+    menuRef.current.classList.toggle("navbar-links-visible");
+    e.target.classList.toggle("open");
+  };
   return (
     <nav className="navbar">
       <div className="Navbar-brand">
         <img src={vector} alt="modern-logo" className="navbar-logo" />
         <span>MODERN TREASURY</span>
       </div>
-
-      <div className="navbar-links">
+      <img
+        className="nav-dropdown"
+        onClick={dropdown_toggel}
+        src={nav_dropdown}
+        alt=""
+      />
+      <div ref={menuRef} className="navbar-links">
         <ul>
           {Items.map((item, index) => (
             <li className={item.cName}>

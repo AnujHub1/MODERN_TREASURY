@@ -1,15 +1,25 @@
 import React from "react";
 import "./BasicInfo.css";
+import { useFormContext } from "react-hook-form";
 
 export default function BasicInfo({ formData, setFormData }) {
+  const {
+    register,
+
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <div className="basic-conatiner">
       <div className="basic-subConatiner">
-        <label htmlFor="firstName">
+        <label htmlFor="firstname">
           First Name <span>*</span>
         </label>
         <input
-          id="firstName"
+          {...register("firstName", {
+            required: { value: true, message: "first name is required!" },
+          })}
+          id="firstname"
           type="text"
           name="firstName"
           value={formData.firstName}
@@ -18,12 +28,22 @@ export default function BasicInfo({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.firstName && (
+        <p className="error-para">{errors.firstName.message}</p>
+      )}
 
       <div className="basic-subConatiner">
         <label htmlFor="lastName">
           Last Name <span>*</span>
         </label>
         <input
+          {...register("lastName", {
+            required: { value: true, message: "last name is required!" },
+            pattern: {
+              value: /^[A-Za-z]+$/i,
+              message: "must not be contain special character",
+            },
+          })}
           id="lastName"
           type="text"
           name="lastName"
@@ -33,12 +53,18 @@ export default function BasicInfo({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.lastName && (
+        <p className="error-para">{errors.lastName.message}</p>
+      )}
 
       <div className="basic-subConatiner">
         <label htmlFor="contactNumber">
           Contact Number <span>*</span>
         </label>
         <input
+          {...register("contactNumber", {
+            required: { value: true, message: "contact number is required!" },
+          })}
           id="contactNumber"
           type="number"
           name="contactNumber"
@@ -48,7 +74,9 @@ export default function BasicInfo({ formData, setFormData }) {
           }}
         />
       </div>
-
+      {errors.contactNumber && (
+        <p className="error-para">{errors.contactNumber.message}</p>
+      )}
       <div className="basic-subConatiner">
         <label htmlFor="email">
           Email <span>*</span>
@@ -56,6 +84,13 @@ export default function BasicInfo({ formData, setFormData }) {
         <input
           id="email"
           type="email"
+          {...register("email", {
+            required: { value: true, message: "mail is required!" },
+            pattern: {
+              value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+              message: "Invalid email address",
+            },
+          })}
           name="email"
           value={formData.email}
           onChange={(event) => {
@@ -63,13 +98,21 @@ export default function BasicInfo({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.email && <p className="error-para">{errors.email.message}</p>}
 
       <div className="basic-subConatiner">
-        <label htmlFor="company">
+        <label htmlFor="companyName">
           Company Name <span>*</span>
         </label>
         <input
-          id="company"
+          {...register("companyName", {
+            required: { value: true, message: "company name is required!" },
+            pattern: {
+              value: /^[A-Za-z]+$/i,
+              message: "must not be contain special character",
+            },
+          })}
+          id="companyName"
           type="text"
           name="companyName"
           value={formData.companyName}
@@ -78,6 +121,9 @@ export default function BasicInfo({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.companyName && (
+        <p className="error-para">{errors.companyName.message}</p>
+      )}
     </div>
   );
 }

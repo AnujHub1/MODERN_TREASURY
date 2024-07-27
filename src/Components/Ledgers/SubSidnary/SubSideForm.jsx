@@ -4,8 +4,10 @@ import CustomerInfo from "../CashLedger/CustomerInfo";
 import AccountDetail from "../GenralLedgers/AccountDetail";
 import Transaction from "./Transaction";
 import Vendor from "./Vendor";
+import { useForm, FormProvider } from "react-hook-form";
 
 export default function SubSideForm() {
+  const methods = useForm();
   const [page, setPage] = useState(0);
 
   const [formData, setFormData] = useState({
@@ -48,46 +50,52 @@ export default function SubSideForm() {
   };
 
   return (
-    <div className="subside-form-container">
-      <div className="form-head">
-        <p>{formtitle[page]}</p>
-      </div>
-      <div className="form-body">{PageDisplay()}</div>
-      <div className="form-footer">
-        <button
-          style={page == 1 ? { display: "none" } : styles}
-          onClick={() => {
-            if (page == formtitle.length - 1) {
-              alert("save");
-              console.log(formData);
-              return (
-                <Transaction cashData={formData} setCashData={setFormData} />
-              );
-              disabled;
-            }
-            setPage((currPage) => currPage + 1);
-          }}
-        >
-          {page == 2 ? "next" : "save"}
-        </button>
-        <button
-          onClick={() => {
-            if (page == formtitle.length - 1) {
-              console.log(formData);
-              return <Transaction />;
-            }
-            if (page == 2) {
-              console.log(formData);
-              return <AccountDetail />;
-            }
-            setPage((currPage) => currPage + 1);
-          }}
-          style={styles}
-        >
-          {page <= 1 ? "next" : "add another"}
-        </button>
-      </div>
-    </div>
+    <FormProvider {...methods}>
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className="subside-form-container"
+      >
+        <div className="form-head">
+          <p>{formtitle[page]}</p>
+        </div>
+        <div className="form-body">{PageDisplay()}</div>
+        <div className="form-footer">
+          <button
+            type="submit"
+            style={page == 1 ? { display: "none" } : styles}
+            // onClick={() => {
+            //   if (page == formtitle.length - 1) {
+            //     alert("save");
+            //     console.log(formData);
+            //     return (
+            //       <Transaction cashData={formData} setCashData={setFormData} />
+            //     );
+            //     disabled;
+            //   }
+            //   setPage((currPage) => currPage + 1);
+            // }}
+          >
+            {page == 2 ? "next" : "save"}
+          </button>
+          <button
+            // onClick={() => {
+            //   if (page == formtitle.length - 1) {
+            //     console.log(formData);
+            //     return <Transaction />;
+            //   }
+            //   if (page == 2) {
+            //     console.log(formData);
+            //     return <AccountDetail />;
+            //   }
+            //   setPage((currPage) => currPage + 1);
+            // }}
+            style={styles}
+          >
+            {page <= 1 ? "next" : "add another"}
+          </button>
+        </div>
+      </form>
+    </FormProvider>
   );
 }
 let styles = {

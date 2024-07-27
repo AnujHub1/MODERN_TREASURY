@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useForm, FormProvider } from "react-hook-form";
 import "./PurcheForm.css";
 import PurDetail from "./PurDetail";
 import Supplier from "./Supplier";
 
 export default function PurcheForm() {
+  const methods = useForm();
   const [page, setPage] = useState(0);
   const [purchaData, setPurchaData] = useState({
     invoice: "",
@@ -18,42 +20,45 @@ export default function PurcheForm() {
 
   const formTitle = [
     "Step 1: Purchase Details",
-    "Step 2: Supplier information",
+    "Step 2: Supplier Information",
   ];
 
-  const PageDisplay = () => {
-    if (page == 0) {
-      return (
-        <PurDetail purchaData={purchaData} setPurchaData={setPurchaData} />
-      );
-    } else if (page == 1) {
-      return <Supplier purchaData={purchaData} setPurchaData={setPurchaData} />;
+  const onSubmit = (data) => {
+    if (page === formTitle.length - 1) {
+      alert("save");
+      console.log(data);
+    } else {
+      setPage((currPage) => currPage + 1);
+      setPurchaData({ ...purchaData, ...data });
     }
   };
+
   return (
-    <div className="purchase-form-container">
-      <div className="form-head">
-        <h4>{formTitle[page]}</h4>
-      </div>
-      <div className="form-body">{PageDisplay()}</div>
-      <div className="form-footer">
-        <button
-          onClick={() => {
-            if (page == formTitle.length - 1) {
-              alert("save");
-              console.log(purchaData);
-              return <Supplier />;
-            }
-            setPage((currPage) => currPage + 1);
-          }}
-          style={styles}
-        >
-          {page == 0 ? "Next" : "Save"}
-        </button>
-      </div>
-    </div>
+    <FormProvider {...methods}>
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className="purchase-form-container"
+      >
+        <div className="form-head">
+          <h4>{formTitle[page]}</h4>
+        </div>
+        <div className="form-body">
+          {page === 0 ? (
+            <PurDetail purchaData={purchaData} setPurchaData={setPurchaData} />
+          ) : (
+            <Supplier purchaData={purchaData} setPurchaData={setPurchaData} />
+          )}
+        </div>
+        <div className="form-footer">
+          <button type="submit" style={styles}>
+            {page === 0 ? "Next" : "Save"}
+          </button>
+        </div>
+      </form>
+    </FormProvider>
   );
 }
+
 let styles = {
   fontSize: "19px",
   borderRadius: "10px",

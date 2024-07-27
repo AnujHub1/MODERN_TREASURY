@@ -35,3 +35,9 @@
   width: 100%;
   height: 330px;
 }
+@media (max-width: 500px) {
+  .payment-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

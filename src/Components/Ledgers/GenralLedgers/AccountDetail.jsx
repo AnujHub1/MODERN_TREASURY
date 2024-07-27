@@ -1,6 +1,11 @@
 import React from "react";
 import "./AccountDetail.css";
+import { useFormContext } from "react-hook-form";
 export default function AccountDetail({ formData, setFormData }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   return (
     <div className="Account-container">
       <div className="account-subConatiner">
@@ -8,6 +13,7 @@ export default function AccountDetail({ formData, setFormData }) {
           Tax Identification Number <span>*</span>
         </label>
         <input
+          {...register("TaxNumber", { required: "tax number is required" })}
           id="Tax"
           type="text"
           name="TaxNumber"
@@ -17,14 +23,18 @@ export default function AccountDetail({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.TaxNumber && (
+        <p className="error-para">{errors.TaxNumber.message}</p>
+      )}
 
       <div className="account-subConatiner">
         <label htmlFor="AccountN">
           Account Number <span>*</span>
         </label>
         <input
+          {...register("AccountN", { required: "account number is required" })}
           id="AccountN"
-          type="text"
+          type="number"
           name="AccountN"
           value={formData.AccountN}
           onChange={(event) => {
@@ -32,12 +42,18 @@ export default function AccountDetail({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.AccountN && (
+        <p className="error-para">{errors.AccountN.message}</p>
+      )}
 
       <div className="account-subConatiner">
         <label htmlFor="AccountHolder">
           Account Holder Name <span>*</span>
         </label>
         <input
+          {...register("AccountHolder", {
+            required: "holder number is required",
+          })}
           id="AccountHolder"
           type="text"
           name="AccountHolder"
@@ -47,6 +63,9 @@ export default function AccountDetail({ formData, setFormData }) {
           }}
         />
       </div>
+      {errors.AccountHolder && (
+        <p className="error-para">{errors.AccountHolder.message}</p>
+      )}
     </div>
   );
 }

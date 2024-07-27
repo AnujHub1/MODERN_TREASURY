@@ -8,7 +8,7 @@ import MultiwayForm from "../Multiway/MultiwayForm";
 export default function BatchPayment() {
   return (
     <div className="cash-container GC">
-      <a href="/platforms/ledgers" className="Ledgers-link">
+      <a href="/platforms/reconciliation" className="Ledgers-link">
         <img src={ledgerArrow} alt="multi-arrow" /> &nbsp;Batch Payment
       </a>
       <div className="cash-sub">

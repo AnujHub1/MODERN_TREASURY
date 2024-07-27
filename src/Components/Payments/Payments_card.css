@@ -45,3 +45,31 @@
   font-weight: 500;
 }
 /* image 2 */
+@media (max-width: 1024px) {
+  .payment-card {
+    margin: 5px 25px;
+  }
+  .payment_Link {
+    height: 40px;
+    width: 100px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 800px) {
+  .payment-card {
+    margin: 0px 15px;
+  }
+  .payment_Link {
+    height: 30px;
+    width: 100px;
+    font-size: 14px;
+  }
+  .payment-img {
+    height: 160px;
+    width: 160px;
+    margin-top: 12px;
+  }
+  .paymnet-content h2 {
+    font-size: 14px;
+  }
+}

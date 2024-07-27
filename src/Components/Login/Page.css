@@ -1,5 +1,5 @@
 .LoginPage {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   padding: 1rem 3rem;
   margin-left: 5rem;
@@ -12,4 +12,26 @@
   margin-right: 100px;
   color: #0f3a22;
   font-size: 18px;
+}
+
+@media (max-width: 1040px) {
+  .LoginPage {
+    margin: 50px;
+
+    display: flex;
+    margin: 3rem;
+  }
+  .mobileImage {
+    height: 150px;
+  }
+}
+@media (max-width: 800px) {
+  .LoginPage {
+    margin: 50px;
+    display: flex;
+    margin: 1rem;
+  }
+  .mobileImage img {
+    height: 90px;
+  }
 }

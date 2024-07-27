@@ -1,7 +1,11 @@
 import React from "react";
 import "./BatchDetail.css";
-
+import { useFormContext } from "react-hook-form";
 export default function BTransaction({ cashData, setCashData }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   return (
     <div className="Batch-container">
       <div className="Batch-subConatiner">
@@ -9,6 +13,9 @@ export default function BTransaction({ cashData, setCashData }) {
           Transaction ID <span>*</span>
         </label>
         <input
+          {...register("transactionId", {
+            required: "id is required",
+          })}
           id="transaction"
           type="text"
           name="transactionId"
@@ -17,6 +24,9 @@ export default function BTransaction({ cashData, setCashData }) {
             setCashData({ ...cashData, transactionId: event.target.value });
           }}
         />
+        {errors.transactionId && (
+          <p className="error-para">{errors.transactionId.message}</p>
+        )}
       </div>
 
       <div className="Batch-subConatiner">
@@ -24,6 +34,7 @@ export default function BTransaction({ cashData, setCashData }) {
           Name <span>*</span>
         </label>
         <input
+          {...register("TName", { required: "name is required" })}
           id="Name"
           type="text"
           name="TName"
@@ -32,6 +43,7 @@ export default function BTransaction({ cashData, setCashData }) {
             setCashData({ ...cashData, TName: event.target.value });
           }}
         />
+        {errors.TName && <p className="error-para">{errors.TName.message}</p>}
       </div>
 
       <div className="Batch-subConatiner">
@@ -39,6 +51,9 @@ export default function BTransaction({ cashData, setCashData }) {
           Payment Type <span>*</span>
         </label>
         <input
+          {...register("PaymentType", {
+            required: "payment type is required",
+          })}
           id="PaymentType"
           type="number"
           name="PaymentType"
@@ -47,6 +62,9 @@ export default function BTransaction({ cashData, setCashData }) {
             setCashData({ ...cashData, PaymentType: event.target.value });
           }}
         />
+        {errors.PaymentType && (
+          <p className="error-para">{errors.PaymentType.message}</p>
+        )}
       </div>
 
       <div className="Batch-subConatiner">
@@ -54,6 +72,7 @@ export default function BTransaction({ cashData, setCashData }) {
           Date <span>*</span>
         </label>
         <input
+          {...register("date", { required: "date is required" })}
           id="Date"
           type="Date"
           name="date"
@@ -62,6 +81,7 @@ export default function BTransaction({ cashData, setCashData }) {
             setCashData({ ...cashData, date: event.target.value });
           }}
         />
+        {errors.date && <p className="error-para">{errors.date.message}</p>}
       </div>
 
       <div className="Batch-subConatiner">
@@ -69,6 +89,9 @@ export default function BTransaction({ cashData, setCashData }) {
           Amount<span>*</span>
         </label>
         <input
+          {...register("Amount", {
+            required: "amount is required",
+          })}
           id="Amount"
           type="number"
           name="Amount"
@@ -77,6 +100,7 @@ export default function BTransaction({ cashData, setCashData }) {
             setCashData({ ...cashData, Amount: event.target.value });
           }}
         />
+        {errors.Amount && <p className="error-para">{errors.Amount.message}</p>}
       </div>
     </div>
   );

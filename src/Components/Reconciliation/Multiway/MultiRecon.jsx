@@ -8,7 +8,7 @@ import MultiwayForm from "./MultiwayForm.jsx";
 export default function MultiRecon() {
   return (
     <div className="cash-container GC">
-      <a href="/platforms/ledgers" className="Ledgers-link">
+      <a href="/platforms/reconciliation" className="Ledgers-link">
         <img src={ledgerArrow} alt="multi-arrow" /> &nbsp;Multi-way
         Reconciliation
       </a>

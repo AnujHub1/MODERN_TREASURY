@@ -1,6 +1,12 @@
 import React from "react";
 import "./BatchDetail.css";
+import { useFormContext } from "react-hook-form";
+
 export default function BatchBusiness({ formData, setFormdata }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   return (
     <div className="Batch-container">
       <div className="Batch-subConatiner">
@@ -8,6 +14,9 @@ export default function BatchBusiness({ formData, setFormdata }) {
           Registration ID<span>*</span>
         </label>
         <input
+          {...register("registration", {
+            required: "registration is required",
+          })}
           id="registration"
           type="text"
           name="registration"
@@ -16,6 +25,9 @@ export default function BatchBusiness({ formData, setFormdata }) {
             setFormdata({ ...formData, registration: event.target.value });
           }}
         />
+        {errors.registration && (
+          <p className="error-para">{errors.registration.message}</p>
+        )}
       </div>
 
       <div className="Batch-subConatiner">
@@ -23,6 +35,7 @@ export default function BatchBusiness({ formData, setFormdata }) {
           Name <span>*</span>
         </label>
         <input
+          {...register("busi_Name", { required: "name is required" })}
           id="busi_Name"
           type="text"
           name="busi_Name"
@@ -31,6 +44,9 @@ export default function BatchBusiness({ formData, setFormdata }) {
             setFormdata({ ...formData, busi_Name: event.target.value });
           }}
         />
+        {errors.busi_Name && (
+          <p className="error-para">{errors.busi_Name.message}</p>
+        )}
       </div>
 
       <div className="Batch-subConatiner">
@@ -38,6 +54,9 @@ export default function BatchBusiness({ formData, setFormdata }) {
           Contact Number <span>*</span>
         </label>
         <input
+          {...register("busi_contact", {
+            required: "contact number is required",
+          })}
           id="busi_contact"
           type="number"
           name="busi_contact"
@@ -46,6 +65,9 @@ export default function BatchBusiness({ formData, setFormdata }) {
             setFormdata({ ...formData, busi_contact: event.target.value });
           }}
         />
+        {errors.busi_contact && (
+          <p className="error-para">{errors.busi_contact.message}</p>
+        )}
       </div>
 
       <div className="Batch-subConatiner">
@@ -53,6 +75,13 @@ export default function BatchBusiness({ formData, setFormdata }) {
           Email <span>*</span>
         </label>
         <input
+          {...register("busi_email", {
+            required: { value: true, message: "email is required" },
+            pattern: {
+              value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+              message: "Invalid email address",
+            },
+          })}
           id="busi_email"
           type="email"
           name="busi_email"
@@ -61,6 +90,9 @@ export default function BatchBusiness({ formData, setFormdata }) {
             setFormdata({ ...formData, busi_email: event.target.value });
           }}
         />
+        {errors.busi_email && (
+          <p className="error-para">{errors.busi_email.message}</p>
+        )}
       </div>
     </div>
   );

@@ -1,7 +1,13 @@
 import React from "react";
 import "./BatchDetail.css";
+import { useFormContext } from "react-hook-form";
 
 export default function indivisual({ formData, setFormdata }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <div className="Batch-container">
       <div className="Batch-subConatiner">
@@ -9,6 +15,7 @@ export default function indivisual({ formData, setFormdata }) {
           Individual ID<span>*</span>
         </label>
         <input
+          {...register("individual_ID", { required: "id is required" })}
           id="individual_ID"
           type="text"
           name="individual_ID"
@@ -17,6 +24,9 @@ export default function indivisual({ formData, setFormdata }) {
             setFormdata({ ...formData, individual_ID: event.target.value });
           }}
         />
+        {errors.individual_ID && (
+          <p className="error-para">{errors.individual_ID.message}</p>
+        )}
       </div>
 
       <div className="Batch-subConatiner">
@@ -24,6 +34,7 @@ export default function indivisual({ formData, setFormdata }) {
           Name <span>*</span>
         </label>
         <input
+          {...register("ind_Name", { required: "name is required" })}
           id="ind_Name"
           type="text"
           name="ind_Name"
@@ -32,6 +43,9 @@ export default function indivisual({ formData, setFormdata }) {
             setFormdata({ ...formData, ind_Name: event.target.value });
           }}
         />
+        {errors.ind_Name && (
+          <p className="error-para">{errors.ind_Name.message}</p>
+        )}
       </div>
 
       <div className="Batch-subConatiner">
@@ -39,6 +53,7 @@ export default function indivisual({ formData, setFormdata }) {
           Contact Number <span>*</span>
         </label>
         <input
+          {...register("ind_contact", { required: "number is required" })}
           id="ind_contact"
           type="number"
           name="ind_contact"
@@ -47,6 +62,9 @@ export default function indivisual({ formData, setFormdata }) {
             setFormdata({ ...formData, ind_contact: event.target.value });
           }}
         />
+        {errors.ind_contact && (
+          <p className="error-para">{errors.ind_contact.message}</p>
+        )}
       </div>
 
       <div className="Batch-subConatiner">
@@ -54,14 +72,21 @@ export default function indivisual({ formData, setFormdata }) {
           Email <span>*</span>
         </label>
         <input
-          id="ind_email"
-          type="email"
-          name="ind_email"
+          {...register("ind_email", {
+            required: { value: true, message: "email is required" },
+            pattern: {
+              value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+              message: "Invalid email address",
+            },
+          })}
           value={formData.ind_email}
           onChange={(event) => {
             setFormdata({ ...formData, ind_email: event.target.value });
           }}
         />
+        {errors.ind_email && (
+          <p className="error-para">{errors.ind_email.message}</p>
+        )}
       </div>
     </div>
   );

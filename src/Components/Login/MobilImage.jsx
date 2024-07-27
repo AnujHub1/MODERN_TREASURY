@@ -5,7 +5,7 @@ function MobilImage() {
     height: "500px",
   };
   return (
-    <div>
+    <div className="mobileImage">
       <img src={logo} alt="mobilImage" style={styles} />
     </div>
   );

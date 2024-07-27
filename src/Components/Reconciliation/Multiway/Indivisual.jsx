@@ -1,7 +1,13 @@
 import React from "react";
 import "../../../css/Transaction.css";
+import { useFormContext } from "react-hook-form";
 
 export default function Indivisual({ formData, setFormdata }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <div className="Transaction-container">
       <div className="transaction-subConatiner">
@@ -9,6 +15,7 @@ export default function Indivisual({ formData, setFormdata }) {
           Individual ID<span>*</span>
         </label>
         <input
+          {...register("individual_ID", { required: "id is required" })}
           id="individual_ID"
           type="text"
           name="individual_ID"
@@ -18,12 +25,16 @@ export default function Indivisual({ formData, setFormdata }) {
           }}
         />
       </div>
+      {errors.individual_ID && (
+        <p className="error-para">{errors.individual_ID.message}</p>
+      )}
 
       <div className="transaction-subConatiner">
         <label htmlFor="ind_Name">
           Name <span>*</span>
         </label>
         <input
+          {...register("ind_Name", { required: "name is required" })}
           id="ind_Name"
           type="text"
           name="ind_Name"
@@ -33,12 +44,18 @@ export default function Indivisual({ formData, setFormdata }) {
           }}
         />
       </div>
+      {errors.ind_Name && (
+        <p className="error-para">{errors.ind_Name.message}</p>
+      )}
 
       <div className="transaction-subConatiner">
         <label htmlFor="ind_contact">
           Contact Number <span>*</span>
         </label>
         <input
+          {...register("ind_contact", {
+            required: "contact number is required",
+          })}
           id="ind_contact"
           type="number"
           name="ind_contact"
@@ -48,14 +65,24 @@ export default function Indivisual({ formData, setFormdata }) {
           }}
         />
       </div>
+      {errors.ind_contact && (
+        <p className="error-para">{errors.ind_contact.message}</p>
+      )}
 
       <div className="transaction-subConatiner">
         <label htmlFor="ind_email">
           Email <span>*</span>
         </label>
         <input
+          {...register("ind_email", {
+            required: { value: true, message: "email is required" },
+            pattern: {
+              value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+              message: "Invalid email address",
+            },
+          })}
           id="ind_email"
-          type="email"
+          type="text"
           name="ind_email"
           value={formData.ind_email}
           onChange={(event) => {
@@ -63,6 +90,9 @@ export default function Indivisual({ formData, setFormdata }) {
           }}
         />
       </div>
+      {errors.ind_email && (
+        <p className="error-para">{errors.ind_email.message}</p>
+      )}
     </div>
   );
 }

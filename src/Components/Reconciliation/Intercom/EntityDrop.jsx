@@ -1,7 +1,13 @@
 import React from "react";
 import "./EntityDrop.css";
+import { useFormContext } from "react-hook-form";
 
 export default function EntityDrop({ cashData, setCashData }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <div className="Batch-container">
       <div className="Batch-subConatiner">

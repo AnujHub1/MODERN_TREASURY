@@ -7,8 +7,11 @@ import BusinessEntity from "./BatchBusiness";
 import Invoice from "./BatchInvoice";
 import Saved from "../Multiway/Saved";
 import BatchDetail from "./BatchDetail";
+import { useForm, FormProvider } from "react-hook-form";
 
 export default function BatchForm() {
+  const methods = useForm();
+
   const [page, setPage] = useState(0);
   const [formData, setFormdata] = useState({
     transactionId: "",
@@ -29,6 +32,7 @@ export default function BatchForm() {
     invose_Type: "",
     Tran_Date: "",
   });
+
   const formTitle = [
     "Step 1: Batch Details",
     "Step 2: Transaction Details",
@@ -55,56 +59,77 @@ export default function BatchForm() {
     }
   };
 
-  return (
-    <div
-      className={`${
-        page == 2
-          ? "FB"
-          : page == 6
-          ? "multiway-form-container"
-          : "batch-form-container"
-      }`}
-    >
-      <div className="form-head">
-        <p>{formTitle[page]}</p>
-      </div>
-      <div className="Batch-form-body">{pageDisplay()}</div>
-      <div className="form-footer">
-        <button
-          style={page <= 5 ? { display: "none" } : styles}
-          onClick={() => {
-            if (page == formTitle.length - 1) {
-              alert("saved");
-              console.log(formData);
-              // disabled;
-            } else if (page == formTitle.length) {
-              return setPage(-1);
-            }
-          }}
-        >
-          {page == formTitle.length ? "Yes" : "next"}
-        </button>
-        <button
-          style={page == 2 ? { display: "none" } : styles}
-          onClick={() => {
-            if (page == 3) {
-              setPage((currpage) => currpage + 1);
-            }
-            if (page == formTitle.length - 1) {
-              alert("saved");
-              console.log(formData);
-            }
-            if (page == formTitle.length) {
-              setPage(-1);
-            }
+  const onSubmit = (data) => {
+    if (page === formTitle.length - 1) {
+      alert("save");
+    }
+    if (page === formTitle.length) {
+      alert("save");
+      console.log(data);
+      setPage(0);
+    } else if (page == 3) {
+      setPage((currPage) => currPage + 2);
+    } else {
+      setPage((currPage) => currPage + 1);
+      setFormdata({ ...formData, ...data });
+    }
+  };
 
-            setPage((currpage) => currpage + 1);
-          }}
-        >
-          {page == formTitle.length ? "Exit" : "next"}
-        </button>
-      </div>
-    </div>
+  return (
+    <FormProvider {...methods}>
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className={`${
+          page == 2
+            ? "FB"
+            : page == 6
+            ? "multiway-form-container"
+            : "batch-form-container"
+        }`}
+      >
+        <div className="form-head">
+          <p>{formTitle[page]}</p>
+        </div>
+        <div className="Batch-form-body">{pageDisplay()}</div>
+        <div className="form-footer">
+          <button
+            type="submit"
+            style={page <= 5 ? { display: "none" } : styles}
+            // onClick={() => {
+            //   if (page == formTitle.length - 1) {
+            //     alert("saved");
+            //     console.log(formData);
+            //     // disabled;
+            //   } else if (page == formTitle.length) {
+            //     return setPage(-1);
+            //   }
+            // }}
+          >
+            {page == formTitle.length ? "Yes" : "next"}
+          </button>
+          <button
+            style={page == 2 ? { display: "none" } : styles}
+            // onClick={() => {
+            //   if (page == 3) {
+            //     setPage((currpage) => currpage + 1);
+            //   }
+            //   if (page == formTitle.length - 1) {
+            //     alert("saved");
+            //     console.log(formData);
+            //   }
+            //   if (page == formTitle.length) {
+            //     setPage(-1);
+            //   }
+
+            //   setPage((currpage) => currpage + 1);
+            // }}
+            type="submit"
+          >
+            {page == formTitle.length ? "Exit" : "next"}
+          </button>
+        </div>
+      </form>
+    </FormProvider>
   );
 }
 

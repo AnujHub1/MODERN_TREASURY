@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { useFormContext } from "react-hook-form";
 import "./PurDetail.css";
 
 export default function PurDetail({ purchaData, setPurchaData }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <div className="pur-container">
       <div className="pur-subConatiner">
@@ -11,12 +17,15 @@ export default function PurDetail({ purchaData, setPurchaData }) {
         <input
           id="invoice"
           type="number"
-          name="invoice"
-          value={purchaData.invoice}
+          {...register("invoice", { required: "Invoice number is required" })}
+          defaultValue={purchaData.invoice}
           onChange={(event) => {
             setPurchaData({ ...purchaData, invoice: event.target.value });
           }}
         />
+        {errors.invoice && (
+          <p className="error-para">{errors.invoice.message}</p>
+        )}
       </div>
 
       <div className="pur-subConatiner">
@@ -25,13 +34,16 @@ export default function PurDetail({ purchaData, setPurchaData }) {
         </label>
         <input
           id="PaymentType"
-          type="number"
-          name="PaymentType"
-          value={purchaData.PaymentType}
+          type="text"
+          {...register("PaymentType", { required: "Payment type is required" })}
+          defaultValue={purchaData.PaymentType}
           onChange={(event) => {
             setPurchaData({ ...purchaData, PaymentType: event.target.value });
           }}
         />
+        {errors.PaymentType && (
+          <p className="error-para">{errors.PaymentType.message}</p>
+        )}
       </div>
 
       <div className="pur-subConatiner">
@@ -40,13 +52,14 @@ export default function PurDetail({ purchaData, setPurchaData }) {
         </label>
         <input
           id="Date"
-          type="Date"
-          name="date"
-          value={purchaData.date}
+          type="date"
+          {...register("date", { required: "Date is required" })}
+          defaultValue={purchaData.date}
           onChange={(event) => {
             setPurchaData({ ...purchaData, date: event.target.value });
           }}
         />
+        {errors.date && <p className="error-para">{errors.date.message}</p>}
       </div>
 
       <div className="pur-subConatiner">
@@ -56,12 +69,13 @@ export default function PurDetail({ purchaData, setPurchaData }) {
         <input
           id="Amount"
           type="number"
-          name="Amount"
-          value={purchaData.Amount}
+          {...register("Amount", { required: "Amount is required" })}
+          defaultValue={purchaData.Amount}
           onChange={(event) => {
             setPurchaData({ ...purchaData, Amount: event.target.value });
           }}
         />
+        {errors.Amount && <p className="error-para">{errors.Amount.message}</p>}
       </div>
     </div>
   );

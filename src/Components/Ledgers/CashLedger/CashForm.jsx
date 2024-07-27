@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./CashForm.css";
 import Transaction from "./Transaction.jsx";
 import CustomerInfo from "./CustomerInfo.jsx";
+import { useFormContext, FormProvider, useForm } from "react-hook-form";
 
 export default function CashForm() {
   const [page, setPage] = useState(0);
@@ -22,6 +23,19 @@ export default function CashForm() {
     "Step 2: Customer information",
   ];
 
+  const methods = useForm();
+
+  const onSubmit = (data) => {
+    if (page === formTitle.length - 1) {
+      alert("save");
+      console.log(data);
+      setPage(0);
+    } else {
+      setPage((currPage) => currPage + 1);
+      setFormData({ ...formData, ...data });
+    }
+  };
+
   const PageDisplay = () => {
     if (page == 0) {
       return <Transaction cashData={cashData} setCashData={setCashData} />;
@@ -31,34 +45,39 @@ export default function CashForm() {
   };
 
   return (
-    <div className="cash-form-container">
-      <div className="form-head">
-        <p>{formTitle[page]}</p>
-      </div>
-      <div className="form-body">{PageDisplay()}</div>
-      <div className="form-footer">
-        <button
-          style={styles}
-          onClick={() => {
-            alert("saved");
-            console.log(cashData);
-          }}
-        >
-          Save
-        </button>
-        <button
-          onClick={() => {
-            if (page == formTitle.length - 1) {
-              disabled;
-            }
-            setPage((currPage) => currPage + 1);
-          }}
-          style={page == 1 ? { display: "none" } : styles}
-        >
-          Next
-        </button>
-      </div>
-    </div>
+    <FormProvider {...methods}>
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className="cash-form-container"
+      >
+        <div className="form-head">
+          <p>{formTitle[page]}</p>
+        </div>
+        <div className="form-body">{PageDisplay()}</div>
+        <div className="form-footer">
+          <button
+            style={styles}
+            // onClick={() => {
+            //   alert("saved");
+            //   console.log(cashData);
+            // }}
+          >
+            Save
+          </button>
+          <button
+            // onClick={() => {
+            //   if (page == formTitle.length - 1) {
+            //     disabled;
+            //   }
+            //   setPage((currPage) => currPage + 1);
+            // }}
+            style={page == 1 ? { display: "none" } : styles}
+          >
+            Next
+          </button>
+        </div>
+      </form>
+    </FormProvider>
   );
 }
 
