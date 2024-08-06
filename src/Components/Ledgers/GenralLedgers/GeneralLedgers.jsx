@@ -29,7 +29,7 @@ export default function GeneralLedgers() {
       </a>
       <div className="general-sub">
         <div className="leftside">
-          <img src={leftSide} alt="left side" />
+          <img src={leftSide} alt="left side" className="leftimg" />
         </div>
         {pageDisplay()}
         <div className="rightside">

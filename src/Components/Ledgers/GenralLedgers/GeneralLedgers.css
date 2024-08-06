@@ -21,9 +21,28 @@
   align-items: center;
   justify-content: space-between;
 }
-.leftside img {
+.leftside {
   height: 430px;
 }
 .rightside {
   height: 360px;
+}
+
+@media (max-width: 500px) {
+  .general-container .Ledgers-link {
+    font-size: 16px;
+  }
+  .leftside {
+    height: 280px;
+  }
+  .leftside .leftimg {
+    height: 280px;
+  }
+  .general_createLedger {
+    height: 200px;
+  }
+
+  .rightside img {
+    height: 310px;
+  }
 }

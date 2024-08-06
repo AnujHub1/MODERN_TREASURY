@@ -16,14 +16,7 @@ export default function CreateCashImage({ cashPage, setcasePage }) {
       <img src={CashLedgerImg} alt="Cash ledger image" />
       <Link
         to="/platforms/ledgers/cash"
-        style={{
-          backgroundColor: "#0a3f22",
-          textDecoration: "none",
-          color: "#ffffff",
-          padding: "7px 30px",
-          borderRadius: "4px",
-          fontSize: "19px",
-        }}
+        className="general-view-btn"
         onClick={() => {
           setcasePage((currPage) => currPage + 1);
         }}

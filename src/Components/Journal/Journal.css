@@ -63,3 +63,91 @@
   flex-direction: column;
   justify-content: center;
 }
+
+@media (max-width: 1024px) {
+  .Journal-link {
+    font-size: 18px;
+  }
+  .Journal-center {
+    margin-top: 10px;
+    width: 650px;
+  }
+  .journal-sub-center h3 {
+    font-size: 22px;
+  }
+  .journal-sub-center {
+    align-items: start;
+    margin: 0px;
+  }
+
+  .journal-sub-center p {
+    font-size: 17px;
+  }
+  .Journal-left img {
+    height: 370px;
+  }
+  .Journal-right img {
+    height: 390px;
+  }
+}
+
+@media (max-width: 800px) {
+  .Journal-link {
+    font-size: 16px;
+  }
+  .Journal-left img {
+    height: 350px;
+  }
+  .Journal-right img {
+    height: 350px;
+  }
+  .Journal-center {
+    margin-top: 10px;
+    width: 400px;
+  }
+  .Journal-center h3 {
+    font-size: 18px;
+  }
+  .Journal-center p {
+    font-size: 13px;
+  }
+  .footer-sub p {
+    font-size: 14px;
+    align-items: start;
+  }
+}
+@media (max-width: 500px) {
+  .Journal-link {
+    font-size: 14px;
+  }
+  .Journal-sub {
+    justify-content: center;
+  }
+  .Journal-left {
+    display: none;
+  }
+  .Journal-right {
+    display: none;
+  }
+  .Journal-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+  }
+  .journal-sub-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Journal-center p {
+    font-size: 11px;
+  }
+  .footer-sub img {
+    height: 30px;
+  }
+  .genral-img {
+    width: 20px;
+  }
+}

@@ -4,7 +4,11 @@ import Integratin_image from "../../assets/Integration.png";
 export default function Inter_first({ page, setPage }) {
   return (
     <div className="inte_centerSide">
-      <img src={Integratin_image} alt="integrating image" />
+      <img
+        src={Integratin_image}
+        alt="integrating image"
+        className="inter-center-img"
+      />
       <p className="inte_getP">
         Modern Treasury’s powerful integrations are the easiest way to keep your
         company’s data flowing.

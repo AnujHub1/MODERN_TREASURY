@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ClickArrow from "../../assets/cil_arrow-right.png";
-import "./ApiR";
+import "./ApiR.css";
 export default function Getstarted({ page, setPage }) {
   return (
     <div className="centerSide">
       <div className="subcenter">
-        <p className="getP">
+        <p className="api-getp">
           Modern Treasury APIs are the backbone of seamless financial
           operations, integrating payment workflows with precision and
           efficiency.
         </p>
-        <p className="getP">
+        <p className="api-getp">
           Modern Treasury offers a straightforward RESTful API for initiating
           bank transfers, validating counterparty bank accounts, and monitoring
           account activity, among other functions. The API communicates over
@@ -19,7 +19,7 @@ export default function Getstarted({ page, setPage }) {
         </p>
       </div>
       <div className="subcenter">
-        <p className="getP">
+        <p className="api-getp">
           To get started, log-in to the web application and access your
           organization settings to see your API key.
         </p>

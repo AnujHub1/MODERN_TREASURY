@@ -48,3 +48,49 @@
   opacity: 0.8;
   cursor: pointer;
 }
+@media (max-width: 800px) {
+  .overview1 {
+    padding: 5px 10px;
+  }
+  .overview1 a {
+    font-size: 16px;
+  }
+  .sub-overview1 h2 {
+    font-size: 18px;
+  }
+  .sub-overview1 p {
+    font-size: 16px;
+  }
+  .overview2 {
+    margin: 30px 5px;
+  }
+  .suboverview2 {
+    width: 130px;
+    height: 120px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .overview1 a {
+    font-size: 14px;
+  }
+  .sub-overview1 img {
+    height: 40px;
+  }
+
+  .sub-overview1 h2 {
+    font-size: 16px;
+  }
+  .sub-overview1 p {
+    width: auto;
+    font-size: 14px;
+  }
+  .overview2 {
+    margin: 80px 0px;
+  }
+  .suboverview2 {
+    width: 90px;
+    height: 70px;
+    font-size: 12px;
+  }
+}

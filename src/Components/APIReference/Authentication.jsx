@@ -7,7 +7,7 @@ export default function Authentication() {
         <h2>Authentication</h2>
         <h3 style={{ textDecoration: "underline" }}>Method</h3>
       </div>
-      <p className="getP">
+      <p className="api-getp">
         All requests must be made over HTTPS and will be authenticated over
         standard{" "}
         <Link style={{ color: "#0500FF" }}>HTTP basic authentication</Link>.
@@ -18,7 +18,7 @@ export default function Authentication() {
       >
         Username & Password
       </h3>
-      <p className="getP">
+      <p className="api-getp">
         When requested, enter the following values for username and password in
         the console/terminal:
       </p>
@@ -33,7 +33,7 @@ export default function Authentication() {
         </tr>
       </table>
       <div
-        className="getP"
+        className="api-getp"
         style={{ marginTop: "25px", textAlign: "center", fontSize: "17px" }}
       >
         Need help?

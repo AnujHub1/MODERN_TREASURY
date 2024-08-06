@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useForm, FormProvider } from "react-hook-form";
 import Transaction from "../../Ledgers/CashLedger/Transaction";
 import EntityType from "./EntityType";
@@ -7,8 +6,7 @@ import Indivisual from "./Indivisual";
 import BusinessEntity from "./BusinessEntity";
 import Invoice from "./Invoice";
 import Saved from "./Saved";
-
-import "./MultiwayForm.css";
+import "../../../css/Forms.css";
 export default function MultiwayForm() {
   const methods = useForm();
   const [page, setPage] = useState(0);
@@ -72,7 +70,7 @@ export default function MultiwayForm() {
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(onSubmit)}
-        className={`${page == 1 ? "FB" : "multiway-form-container"}`}
+        className={`${page == 1 ? "FB" : "cash-form-container"}`}
       >
         <div className="form-head">
           <p>{formTitle[page]}</p>
@@ -80,33 +78,13 @@ export default function MultiwayForm() {
         <div className="form-body">{pageDisplay()}</div>
         <div className="form-footer">
           <button
-            style={page <= 4 ? { display: "none" } : styles}
-            // onClick={() => {
-            //   if (page == formTitle.length - 1) {
-            //     alert("saved");
-            //     console.log(formData);
-            //     // disabled;
-            //   }
-            // }}
+            className={page <= 4 ? "display-button" : "general-button"}
             type="submit"
           >
             {page == formTitle.length ? "Yes" : "next"}
           </button>
           <button
-            style={page == 1 ? { display: "none" } : styles}
-            // onClick={() => {
-            //   if (page == 2) {
-            //     setPage((currpage) => currpage + 1);
-            //   }
-            //   if (page == formTitle.length - 1) {
-            //     alert("saved");
-            //     console.log(formData);
-            //   }
-            //   if (page == formTitle.length) {
-            //     return <Transaction />;
-            //   }
-            //   setPage((currpage) => currpage + 1);
-            // }}
+            className={page == 1 ? "display-button" : "general-button"}
             type="submit"
           >
             {page == formTitle.length ? "Exit" : "next"}
@@ -116,23 +94,3 @@ export default function MultiwayForm() {
     </FormProvider>
   );
 }
-let styles = {
-  fontSize: "19px",
-  borderRadius: "10px",
-  width: "130px",
-  height: "45px",
-  background: "#0a3f22",
-  fontWeight: "520",
-  color: "white",
-  border: "0 none",
-  cursor: "pointer",
-  padding: "12px 10px",
-  margin: "5px",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};
-
-let styles2 = {
-  display: "none",
-};

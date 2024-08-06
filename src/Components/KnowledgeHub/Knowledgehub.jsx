@@ -10,11 +10,12 @@ export default function Knowledgehub() {
   return (
     <div className="knowledge-container">
       <a href="/resources/knowledgehub" className="knowledge-link">
-        <img src={ledgerArrow} alt="knowledge-arrow" /> &nbsp;Knowledge Hub
+        <img src={ledgerArrow} alt="knowledge-arrow" className="genral-img" />
+        &nbsp;Knowledge Hub
       </a>
       <div className="knowledge-sub">
         <div className="knowledge_leftSide">
-          <img src={leftSide} alt="left side" />
+          <img src={leftSide} alt="left side" className="leftimg" />
         </div>
         <Know_Center />
         <div className="knowledge_rightside">

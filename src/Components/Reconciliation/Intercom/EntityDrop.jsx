@@ -1,6 +1,7 @@
 import React from "react";
-import "./EntityDrop.css";
+// import "./EntityDrop.css";
 import { useFormContext } from "react-hook-form";
+import "../../../css/InterInput.css";
 
 export default function EntityDrop({ cashData, setCashData }) {
   const {

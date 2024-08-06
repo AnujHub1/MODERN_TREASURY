@@ -22,3 +22,26 @@
   justify-content: center;
   display: flex;
 }
+@media (max-width: 800px) {
+  .TalkTOUs-container p {
+    font-size: 18px;
+    text-align: center;
+  }
+  .TalkTOUs-container .object-image {
+    width: 270px;
+  }
+}
+@media (max-width: 500px) {
+  .TalkTOUs-container {
+    margin-bottom: 150px;
+  }
+  .TalkTOUs-container .object-image {
+    width: 200px;
+  }
+  .talkToUS-buttn {
+    width: 100px;
+    font-size: 14px;
+    height: 40px;
+    padding: 0px;
+  }
+}

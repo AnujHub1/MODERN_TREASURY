@@ -22,7 +22,12 @@ export default function ApiR() {
   return (
     <div className="API-containe">
       <a href="/home" className="API-link">
-        <img src={ledgerArrow} alt="Reconcialtion-arrow" /> &nbsp;API References
+        <img
+          src={ledgerArrow}
+          alt="Reconcialtion-arrow"
+          className="api-image"
+        />
+        &nbsp;API References
       </a>
       <div className="API-sub">
         <div className={page == 0 ? "APIleftSide" : "OP"}>

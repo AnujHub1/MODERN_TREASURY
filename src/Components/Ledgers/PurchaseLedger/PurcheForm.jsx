@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import "./PurcheForm.css";
+import "../../../css/Forms.css";
 import PurDetail from "./PurDetail";
 import Supplier from "./Supplier";
 
@@ -37,7 +37,7 @@ export default function PurcheForm() {
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(onSubmit)}
-        className="purchase-form-container"
+        className="cash-form-container"
       >
         <div className="form-head">
           <h4>{formTitle[page]}</h4>
@@ -50,7 +50,7 @@ export default function PurcheForm() {
           )}
         </div>
         <div className="form-footer">
-          <button type="submit" style={styles}>
+          <button type="submit" className="general-button">
             {page === 0 ? "Next" : "Save"}
           </button>
         </div>

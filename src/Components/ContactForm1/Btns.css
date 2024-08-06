@@ -15,3 +15,37 @@
   border-radius: 8px;
   text-decoration: none;
 }
+@media (max-width: 1024px) {
+  .btnss a {
+    width: 250px;
+    padding: 8px 15px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 800px) {
+  .btns {
+    margin: 40px;
+  }
+  .btnss a {
+    width: 170px;
+    padding: 9px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 500px) {
+  .btns {
+    margin: 0px;
+  }
+  .btnss {
+    height: 20px;
+    width: 180px;
+  }
+  .btnss a {
+    background: #0a3f22;
+
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+}

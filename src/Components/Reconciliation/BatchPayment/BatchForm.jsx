@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../Multiway/MultiwayForm.css";
+// import "../Multiway/MultiwayForm.css";
+import "../../../css/InterForms.css";
 import BTransaction from "./BTransaction";
 import EntityType from "../Multiway/EntityType";
 import Indivisual from "./indivisual";
@@ -84,7 +85,7 @@ export default function BatchForm() {
             ? "FB"
             : page == 6
             ? "multiway-form-container"
-            : "batch-form-container"
+            : "inter_form_container"
         }`}
       >
         <div className="form-head">
@@ -94,7 +95,7 @@ export default function BatchForm() {
         <div className="form-footer">
           <button
             type="submit"
-            style={page <= 5 ? { display: "none" } : styles}
+            className={page <= 5 ? "display-button" : "general-button"}
             // onClick={() => {
             //   if (page == formTitle.length - 1) {
             //     alert("saved");
@@ -108,21 +109,7 @@ export default function BatchForm() {
             {page == formTitle.length ? "Yes" : "next"}
           </button>
           <button
-            style={page == 2 ? { display: "none" } : styles}
-            // onClick={() => {
-            //   if (page == 3) {
-            //     setPage((currpage) => currpage + 1);
-            //   }
-            //   if (page == formTitle.length - 1) {
-            //     alert("saved");
-            //     console.log(formData);
-            //   }
-            //   if (page == formTitle.length) {
-            //     setPage(-1);
-            //   }
-
-            //   setPage((currpage) => currpage + 1);
-            // }}
+            className={page == 2 ? "display-button" : "general-button"}
             type="submit"
           >
             {page == formTitle.length ? "Exit" : "next"}

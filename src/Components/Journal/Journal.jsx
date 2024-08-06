@@ -11,7 +11,8 @@ export default function Journal() {
   return (
     <div className="Journal-container">
       <a href="/home" className="Journal-link">
-        <img src={ledgerArrow} alt="glossary-arrow" /> &nbsp;Journal
+        <img src={ledgerArrow} alt="glossary-arrow" className="genral-img" />
+        &nbsp;Journal
       </a>
       <div className="Journal-sub">
         <div className="Journal-left">

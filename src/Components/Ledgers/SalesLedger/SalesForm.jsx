@@ -44,35 +44,17 @@ export default function SalesForm() {
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(onSubmit)}
-        className="sales-form-container"
+        className="cash-form-container"
       >
         <div className="form-head">
           <p>{formTitle[page]}</p>
         </div>
         <div className="form-body">{PageDisplay()}</div>
         <div className="form-footer">
-          <button
-            type="submit"
-            style={styles}
-            // onClick={() => {
-            //   alert("saved");
-            //   console.log(cashData);
-            // }}
-          >
+          <button type="submit" className="general-button">
             Save
           </button>
-          <button
-            type="submit"
-            // onClick={() => {
-            //   if (page == formTitle.length - 1) {
-            //     return (
-            //       <CustomerInfo cashData={cashData} setCashData={setCashData} />
-            //     );
-            //   }
-            //   setPage((currPage) => currPage + 1);
-            // }}
-            style={styles}
-          >
+          <button type="submit" className="general-button">
             {page == 0 ? "Next" : "Add another"}
           </button>
         </div>

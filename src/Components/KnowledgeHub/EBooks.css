@@ -47,7 +47,64 @@
   gap: 40px;
 }
 .EbookLink a {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 550;
   color: #2413ea;
+}
+
+@media (max-width: 1024px) {
+  .Ebook-link {
+    font-size: 18px;
+  }
+  .EbookLink a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .Ebook-link {
+    font-size: 16px;
+  }
+  .EbookLink a {
+    font-size: 15px;
+  }
+  .Ebook_leftSide img {
+    height: 350px;
+  }
+  .Ebook_rightside img {
+    height: 370px;
+  }
+  .Ebooks-center {
+    margin: 5px;
+  }
+  .Ebooks-center h2 {
+    font-size: 19px;
+  }
+}
+@media (max-width: 500px) {
+  .Ebook-link {
+    font-size: 14px;
+  }
+  .Ebooks-center {
+    margin: 0px;
+    gap: 10px;
+  }
+  .Ebooks-center h2 {
+    font-size: 16px;
+  }
+  .EbookLink {
+    gap: 20px;
+  }
+  .Ebook_leftSide img {
+    height: 280px;
+  }
+  .Ebook_rightside img {
+    height: 280px;
+  }
+  .EbookLink a {
+    font-size: 13px;
+  }
+  .EbookLink img {
+    width: 25px;
+  }
 }

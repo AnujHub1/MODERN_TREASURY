@@ -1,5 +1,5 @@
 import React from "react";
-import "../Multiway/MultiRecon.css";
+import "../../../css/CashLedger.css";
 import ledgerArrow from "../../../assets/arrow.png";
 import leftSide from "../../../assets/leftside.png";
 import rightSide from "../../../assets/rightSide.png";
@@ -14,13 +14,17 @@ export default function Intercompany() {
       </a>
       <div className="cash-sub">
         <div className="leftside">
-          <img src={leftSide} alt="left side" />
+          <img src={leftSide} alt="left side" className="leftimg" />
         </div>
         <div className="centerSide">
           <InterForm />
         </div>
         <div className="rightside">
-          <img src={rightSide} alt="right side" className="rightImage" />
+          <img
+            src={rightSide}
+            alt="right side"
+            className="rightImage inter-right-image"
+          />
         </div>
       </div>
     </div>

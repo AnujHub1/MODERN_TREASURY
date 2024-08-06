@@ -56,8 +56,8 @@ export default function GeneralForm() {
         onSubmit={methods.handleSubmit(onSubmit)}
         className="general-form-container"
       >
-        <div className="form-head">
-          <p>
+        <div className="form-head genera_lform_head">
+          <p className="form-paragraph">
             {page == formtitle.length
               ? formtitle[formtitle.length - 1]
               : formtitle[page]}
@@ -68,31 +68,11 @@ export default function GeneralForm() {
           <button
             type="submit"
             disabled={page == 0}
-            // onClick={() => {
-            //   if (page == formtitle.length - 1) {
-            //     alert("save");
-            //     console.log(formData);
-            //   }
-            //   {
-            //     setPage((currPage) => currPage + 1);
-            //   }
-            // }}
-            style={page == 0 ? { display: "none" } : styles}
+            className={page == 0 ? "display-button" : "general-button"}
           >
             {page == 1 ? "Next" : "Save"}
           </button>
-          <button
-            type="submit"
-            // onClick={() => {
-            //   if (page == formtitle.length - 1) {
-            //     alert("form submited");
-            //     console.log(formData);
-            //   } else {
-            //     setPage((currPage) => currPage + 1);
-            //   }
-            // }}
-            style={styles}
-          >
+          <button type="submit" className="general-button">
             {page == 0
               ? "Next"
               : page == 1
@@ -106,20 +86,3 @@ export default function GeneralForm() {
     </FormProvider>
   );
 }
-
-let styles = {
-  fontSize: "19px",
-  borderRadius: "10px",
-  width: "130px",
-  height: "45px",
-  background: "#0a3f22",
-  fontWeight: "520",
-  color: "white",
-  border: "0 none",
-  cursor: "pointer",
-  padding: "12px 10px",
-  margin: "5px",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};

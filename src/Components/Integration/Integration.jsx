@@ -23,15 +23,16 @@ export default function Integration() {
   return (
     <div className="integration-containe">
       <a href="/home" className="integration-link">
-        <img src={ledgerArrow} alt="integration-arrow" /> &nbsp;Integrations
+        <img src={ledgerArrow} alt="integration-arrow" />
+        &nbsp;Integrations
       </a>
       <div className="integration-sub">
         <div className="inte_leftSide">
-          <img src={leftSide} alt="left side" />
+          <img src={leftSide} alt="left side" className="left-image" />
         </div>
         {pageDisplay()}
         <div className="inte_rightside">
-          <img src={rightSide} alt="right side" className="rightImage" />
+          <img src={rightSide} alt="right side" className="right-image" />
         </div>
       </div>
     </div>

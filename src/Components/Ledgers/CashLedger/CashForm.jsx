@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CashForm.css";
+import "../../../css/Forms.css";
 import Transaction from "./Transaction.jsx";
 import CustomerInfo from "./CustomerInfo.jsx";
 import { useFormContext, FormProvider, useForm } from "react-hook-form";
@@ -56,7 +56,7 @@ export default function CashForm() {
         <div className="form-body">{PageDisplay()}</div>
         <div className="form-footer">
           <button
-            style={styles}
+            className="general-button"
             // onClick={() => {
             //   alert("saved");
             //   console.log(cashData);
@@ -64,15 +64,7 @@ export default function CashForm() {
           >
             Save
           </button>
-          <button
-            // onClick={() => {
-            //   if (page == formTitle.length - 1) {
-            //     disabled;
-            //   }
-            //   setPage((currPage) => currPage + 1);
-            // }}
-            style={page == 1 ? { display: "none" } : styles}
-          >
+          <button className={page == 1 ? "display-button" : "general-button"}>
             Next
           </button>
         </div>

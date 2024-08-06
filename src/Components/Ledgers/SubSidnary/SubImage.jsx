@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SubsideImage from "../../../assets/subSideImage.png";
+import "./Subside.css";
 
 export default function SubImage({ subside, setSubside }) {
   return (
@@ -16,15 +17,8 @@ export default function SubImage({ subside, setSubside }) {
     >
       <img src={SubsideImage} alt="General ledger image" />
       <Link
+        className="general-view-btn"
         to="/platforms/ledgers/subsidiary"
-        style={{
-          backgroundColor: "#0a3f22",
-          textDecoration: "none",
-          color: "#ffffff",
-          padding: "7px 27px",
-          borderRadius: "4px",
-          fontSize: "19px",
-        }}
         onClick={() => {
           setSubside((currpage) => currpage + 1);
         }}
@@ -33,14 +27,7 @@ export default function SubImage({ subside, setSubside }) {
       </Link>
       <Link
         to="/platforms/ledgers/subsidiary"
-        style={{
-          backgroundColor: "#0a3f22",
-          textDecoration: "none",
-          color: "#ffffff",
-          padding: "7px 30px",
-          borderRadius: "4px",
-          fontSize: "19px",
-        }}
+        className="general-view-btn"
         onClick={() => {
           setSubside((currpage) => currpage + 1);
         }}

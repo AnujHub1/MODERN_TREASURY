@@ -112,38 +112,38 @@ function App() {
     {
       path: "platforms/payments",
       element: (
-        <div className="container2">
+        <>
           <Navbar></Navbar>
           <Payments />
-        </div>
+        </>
       ),
     },
     {
       path: "/platforms/payments/:title",
 
       element: (
-        <div className="container2">
+        <>
           <Navbar></Navbar>
           <PaymentsProduct />
-        </div>
+        </>
       ),
     },
     {
       path: "/platforms/ledgers",
       element: (
-        <div className="container2">
+        <>
           <Navbar></Navbar>
           <LadgersHome></LadgersHome>
-        </div>
+        </>
       ),
     },
     {
       path: "/platforms/ledgers/general",
       element: (
-        <div className="container2">
+        <>
           <Navbar></Navbar>
           <GeneralLedgers></GeneralLedgers>
-        </div>
+        </>
       ),
     },
 

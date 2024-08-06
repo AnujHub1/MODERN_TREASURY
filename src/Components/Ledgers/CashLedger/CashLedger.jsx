@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import "./CashLedger.css";
 import CreateCashImage from "./CreateCashImage";
-import CashForm from "./CashForm";
+import "../../../css/CashLedger.css";
 import ledgerArrow from "../../../assets/arrow.png";
 import leftSide from "../../../assets/leftside.png";
 import rightSide from "../../../assets/rightSide.png";
-
+import CashForm from "./CashForm";
 export default function CashLedger() {
   const [cashPage, setcasePage] = useState(0);
 
@@ -23,7 +22,7 @@ export default function CashLedger() {
       </a>
       <div className="cash-sub">
         <div className="leftside">
-          <img src={leftSide} alt="left side" />
+          <img src={leftSide} alt="left side" className="leftimg" />
         </div>
         {cashPageDisplay()}
         <div className="rightside">

@@ -1,10 +1,11 @@
 import React from "react";
-import "../Multiway/MultiRecon.css";
+// import "../Multiway/MultiRecon.css";
+import "../../../css/CashLedger.css";
 import ledgerArrow from "../../../assets/arrow.png";
 import leftSide from "../../../assets/leftside.png";
 import rightSide from "../../../assets/rightSide.png";
 import BatchForm from "./BatchForm";
-import MultiwayForm from "../Multiway/MultiwayForm";
+
 export default function BatchPayment() {
   return (
     <div className="cash-container GC">

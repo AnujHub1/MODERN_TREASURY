@@ -12,7 +12,7 @@ export default function Apifirst({ page, setPage }) {
         Power seamless financial operations, integrating payment workflows with
         precision and efficiency.
       </p>
-      <img src={apiimage} alt="API referecne" className="centerImage" />
+      <img src={apiimage} alt="API referecne" className="api-center-image" />
       <div
         className="api_link"
         onClick={() => {

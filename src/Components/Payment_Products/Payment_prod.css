@@ -1,6 +1,5 @@
 .Payment_product_container {
   width: 100%;
-  height: 100vh;
 }
 
 .Payment_Product_header {
@@ -37,19 +36,47 @@
   /* position: contain; */
 }
 @media (max-width: 1024px) {
+  .Payment_Product_header {
+    font-size: 18px;
+  }
+  .Payment_Product_Link {
+    font-size: 18px;
+  }
+  .Payment_Product_Link img {
+    height: 25px;
+  }
   .Payment_product_content {
-    /* background-image: url("../../../parah.png"); */
     font-weight: 450;
-    padding: 15px 40px;
+    padding: 15px 5px;
   }
 }
 .Payment_product-para {
-  font-size: 27px;
+  font-size: 20px;
 }
 .Payment_product_content .details {
-  font-size: 23px;
+  font-size: 18px;
   line-height: 0.5;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 800px) {
+  .Payment_Product_header {
+    font-size: 15px;
+  }
+  .Payment_Product_Link {
+    width: 100px;
+    height: 34px;
+    margin-top: 0px;
+    font-size: 16px;
+  }
+  .Payment_product-para {
+    font-size: 14px;
+  }
+  .Payment_product_content .details {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }

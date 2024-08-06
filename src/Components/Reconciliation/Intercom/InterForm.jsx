@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./InterForm.css";
+import "../../../css/InterForms.css";
 import EntityDrop from "./EntityDrop";
 import Indivisual from "../BatchPayment/indivisual";
 import BatchBusiness from "../BatchPayment/BatchBusiness";
@@ -86,34 +86,11 @@ export default function InterForm() {
           <div className="form-footer">
             <button
               type="submit"
-              style={page <= 5 ? { display: "none" } : styles}
-              // onClick={() => {
-              //   if (page == formTitle.length - 1) {
-              //     alert("saved");
-              //     console.log(formData);
-              //     // disabled;
-              //   } else if (page == formTitle.length) {
-              //     return setPage(0);
-              //   }
-              // }}
+              className={page <= 5 ? "display-button" : "general-button"}
             >
               {page == formTitle.length ? "Yes" : "next"}
             </button>
-            <button
-              style={styles}
-              type="submit"
-              // onClick={() => {
-              //   if (page == formTitle.length - 1) {
-              //     alert("saved");
-              //     console.log(formData);
-              //   }
-              //   if (page == formTitle.length) {
-              //     setPage(-1);
-              //   }
-
-              //   setPage((currpage) => currpage + 1);
-              // }}
-            >
+            <button className="general-button" type="submit">
               {page == formTitle.length ? "Exit" : "next"}
             </button>
           </div>

@@ -9,7 +9,8 @@ export default function Glossary() {
   return (
     <div className="Glossary-container">
       <a href="/home" className="Glossary-link">
-        <img src={ledgerArrow} alt="glossary-arrow" /> &nbsp;Glossary
+        <img src={ledgerArrow} alt="glossary-arrow" className="glow-image" />
+        &nbsp;Glossary
       </a>
       <div className="Glossary-sub">
         <div className="Glossary-left">

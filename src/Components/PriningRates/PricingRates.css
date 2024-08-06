@@ -43,3 +43,81 @@
   text-decoration: none;
   font-weight: 500;
 }
+.subpricing-para {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+}
+.subprcing-heading {
+  font-size: 24px;
+  opacity: 0.6;
+}
+@media (max-width: 800px) {
+  .pricing1 .Ledgers-link {
+    font-size: 18px;
+    padding-left: 8px;
+    padding-top: 8px;
+  }
+  .pricing1 img {
+    width: 20px;
+  }
+  .subPricing h3 {
+    font-size: 20px;
+  }
+  .subprcing-heading,
+  .subpricing-para {
+    font-size: 19px;
+  }
+  .subPricing {
+    margin: 0px 10px;
+  }
+
+  /* .pricing2 .subPrice {
+    justify-content: center;
+    gap: 10px;
+  } */
+  .subPrice {
+    width: 500px;
+    font-size: 18px;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .subPricing p {
+    padding-left: 10px;
+  }
+  .pricing-explore {
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .pricing1 .Ledgers-link {
+    font-size: 15px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  .pricing1 img {
+    width: 15px;
+  }
+  .subPricing h3 {
+    font-size: 17px;
+  }
+  .subprcing-heading,
+  .subpricing-para {
+    font-size: 16px;
+  }
+  .subPricing {
+    margin: 0px 5px;
+  }
+
+  .subPrice {
+    width: 300px;
+    font-size: 15px;
+    justify-content: space-between;
+  }
+  .pricing-explore {
+    font-size: 14px;
+  }
+  .subPrice img {
+    width: 30px;
+  }
+}

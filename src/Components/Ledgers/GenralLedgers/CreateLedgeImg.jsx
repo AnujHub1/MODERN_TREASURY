@@ -14,7 +14,11 @@ export default function CreateLedgeImg({ generalPage, setgeneralPage }) {
         gap: "50px",
       }}
     >
-      <img src={createLedger} alt="General ledger image" />
+      <img
+        className="general_createLedger"
+        src={createLedger}
+        alt="General ledger image"
+      />
       <Link
         to="/platforms/ledgers/general"
         style={{
@@ -23,7 +27,7 @@ export default function CreateLedgeImg({ generalPage, setgeneralPage }) {
           color: "#ffffff",
           padding: "7px 30px",
           borderRadius: "4px",
-          fontSize: "19px",
+          fontSize: "16px",
         }}
         onClick={() => {
           setgeneralPage((currpage) => currpage + 1);

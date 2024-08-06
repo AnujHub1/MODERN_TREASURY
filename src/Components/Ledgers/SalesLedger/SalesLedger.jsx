@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SalesLedger.css";
+import "../../../css/CashLedger.css";
 import ledgerArrow from "../../../assets/arrow.png";
 import leftSide from "../../../assets/leftside.png";
 import rightSide from "../../../assets/rightSide.png";
@@ -18,13 +18,13 @@ export default function SalesLedger() {
   };
 
   return (
-    <div className={`sales-container ${salesPage === 1 ? "GC" : ""}`}>
+    <div className={`cash-container ${salesPage === 1 ? "GC" : ""}`}>
       <a href="/platforms/ledgers" className="Ledgers-link">
         <img src={ledgerArrow} alt="Payment-arrow" /> &nbsp;Sales Ledger
       </a>
-      <div className="sales-sub">
+      <div className="cash-sub">
         <div className="leftside">
-          <img src={leftSide} alt="left side" />
+          <img src={leftSide} alt="left side" className="leftimg" />
         </div>
         {salesPageDisplay()}
         <div className="rightside">

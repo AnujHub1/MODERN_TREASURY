@@ -15,10 +15,10 @@ export default function PricingRates() {
           Pricing Rates
         </Link>
         <div className="subPricing">
-          <h3 style={{ opacity: "0.6", fontSize: "24px" }}>PRICING</h3>
-          <h3 style={{ color: "#ffffff", fontSize: "24px", fontWeight: "500" }}>
+          <h3 className="subprcing-heading">PRICING</h3>
+          <p className="subpricing-para">
             Predictable Pricing, Designed for Scale.
-          </h3>
+          </p>
           <div className="api_link">
             <Link>Talk to us</Link>
             <img src={ClickArrow} alt="arrow" />

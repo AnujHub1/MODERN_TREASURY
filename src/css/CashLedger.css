@@ -1,4 +1,4 @@
-.subSide-container {
+.cash-container {
   height: 100vh;
   width: 100vw;
 }
@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: start;
 }
-.subSide-sub {
+.cash-sub {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,17 +27,30 @@
 .rightside {
   height: 360px;
 }
-.general-view-btn {
-  background-color: #0a3f22;
-  text-decoration: none;
-  color: #ffffff;
-  padding: 7px 27px;
-  border-radius: 4px;
-  font-size: 19px;
+.centarImg .rec-heading2 {
+  font-size: 28px;
+  font-weight: 650;
 }
+.centarImg .rec-heading1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0a3f22;
+}
+@media (max-width: 1024px) {
+  .rightside .inter-right-image {
+    height: 380px;
+  }
+}
+
 @media (max-width: 800px) {
-  .subSide-container .Ledgers-link {
+  .cash-container .Ledgers-link {
     font-size: 17px;
+  }
+  .centarImg .rec-heading2 {
+    font-size: 20px;
+  }
+  .centarImg .rec-heading1 {
+    font-size: 22px;
   }
   .centarImg img {
     width: 300px;
@@ -56,8 +69,11 @@
     font-size: 15px;
   }
 
-  .leftside img {
+  .leftside {
     height: 300px;
+  }
+  .leftside .leftimg {
+    height: 330px;
   }
   .general_createLedger {
     height: 300px;
@@ -68,17 +84,27 @@
 }
 
 @media (max-width: 500px) {
-  .subSide-container .Ledgers-link {
+  .cash-container .Ledgers-link {
     font-size: 13px;
   }
   .general-view-btn {
     width: 80px;
     font-size: 10px;
   }
+  .centarImg .rec-heading2 {
+    font-size: 17px;
+    text-align: center;
+  }
+  .centarImg .rec-heading1 {
+    font-size: 18px;
+  }
   .centarImg img {
     width: 220px;
   }
-  .leftside img {
+  .leftside {
+    height: 280px;
+  }
+  .leftside .leftimg {
     height: 280px;
   }
   .general_createLedger {

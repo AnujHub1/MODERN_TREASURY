@@ -35,7 +35,7 @@
   font-weight: 550;
   /* width: 680px; */
   text-align: center;
-  margin: 0 340px;
+  margin: 0px 100px;
 }
 .paragraph-center {
   margin: 2px 60px 2px 30px;
@@ -56,4 +56,97 @@
 } */
 .Glossary_right img {
   height: 450px;
+}
+@media (max-width: 1024px) {
+  .Glossary-link {
+    font-size: 18px;
+  }
+  .GL-div {
+    font-size: 18px;
+    margin: 0px 20px;
+  }
+  .paragraph-center {
+    margin: 0px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1;
+  }
+  .paragraph-center p {
+    margin: 10px;
+  }
+  .Glossary-center {
+    margin-top: 10px;
+    width: 650px;
+  }
+  .Glossary-left img {
+    height: 370px;
+  }
+  .Glossary-right img {
+    height: 390px;
+  }
+}
+
+@media (max-width: 800px) {
+  .Glossary-link {
+    font-size: 16px;
+  }
+  .Glossary-left img {
+    height: 350px;
+  }
+  .Glossary_right img {
+    height: 350px;
+  }
+  .GL-div {
+    font-size: 16px;
+    margin: 0px 40px;
+  }
+  .paragraph-center {
+    margin: 0px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .paragraph-center p {
+    margin: 10px;
+  }
+  .Glossary-center {
+    margin-top: 10px;
+    width: 650px;
+  }
+}
+@media (max-width: 500px) {
+  .Glossary-link {
+    font-size: 14px;
+  }
+  .Glossary-sub {
+    justify-content: center;
+  }
+  .Glossary-left {
+    display: none;
+  }
+  .Glossary-right {
+    display: none;
+  }
+  .Glossary-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  .Glossary-sub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .paragraph-center {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  .glow-image {
+    width: 20px;
+  }
+  .GL-div {
+    font-size: 14px;
+  }
 }

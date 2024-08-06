@@ -1,5 +1,5 @@
 import React from "react";
-import "./MultiRecon.css";
+import "../../../css/CashLedger.css";
 import ledgerArrow from "../../../assets/arrow.png";
 import leftSide from "../../../assets/leftside.png";
 import rightSide from "../../../assets/rightSide.png";
@@ -14,7 +14,7 @@ export default function MultiRecon() {
       </a>
       <div className="cash-sub">
         <div className="leftside">
-          <img src={leftSide} alt="left side" />
+          <img src={leftSide} alt="left side" className="leftimg" />
         </div>
         <MultiwayForm />
         <div className="rightside">

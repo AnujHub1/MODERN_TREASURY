@@ -14,7 +14,7 @@ export default function International() {
         <img src={swift} alt="Swift" />
         <Link>Swift</Link>
       </div>
-      <p className="inte_getP" style={{ fontSize: "25px" }}>
+      <p className="inte_getP">
         Seamless, transaction-level reconciliation for these processors.
       </p>
     </div>

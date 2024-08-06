@@ -16,9 +16,10 @@
 }
 
 .ContactForm2 {
-  margin-left: 500px;
-  display: block;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .ContactinputDiv {
   padding: 4px;
@@ -48,8 +49,6 @@
   color: red;
 }
 .contact-btn {
-  /* display: flex; */
-  margin-left: 180px;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
@@ -60,4 +59,40 @@
   padding: 15px 25px;
   font-size: 18px;
   border-radius: 5px;
+  color: #fff;
+}
+@media (max-width: 800px) {
+  .ContactForm2 {
+    margin-top: 20px;
+  }
+  .contact-container a {
+    font-size: 18px;
+  }
+  .ContactinputDiv input {
+    width: 350px;
+  }
+  .ContactinputDiv label {
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .ContactForm2 {
+    margin-top: 50px;
+  }
+  .contact-container a {
+    font-size: 16px;
+  }
+  .ContactinputDiv input {
+    width: 280px;
+    height: 35px;
+  }
+  .ContactinputDiv label {
+    font-size: 14px;
+  }
+  .contact-btn button {
+    padding: 5px;
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+  }
 }

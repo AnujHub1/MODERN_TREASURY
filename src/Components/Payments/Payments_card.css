@@ -11,7 +11,7 @@
   /* background-color: #fff; */
 }
 .payment-img {
-  height: 200px;
+  height: 180px;
   width: 180px;
   margin-top: 12px;
   margin-right: 20px;
@@ -71,5 +71,29 @@
   }
   .paymnet-content h2 {
     font-size: 14px;
+  }
+}
+@media (max-width: 500px) {
+  .payment-card {
+    height: 250px;
+  }
+  .payment-img {
+    height: 120px;
+    width: 140px;
+  }
+  .paymnet-content h2 {
+    font-size: 10px;
+  }
+  .paymnet-content div {
+    font-size: 10px;
+    align-items: center;
+  }
+  .payment_Link {
+    height: 20px;
+    width: 80px;
+    font-size: 12px;
+  }
+  .payment_Link img {
+    width: 20px;
   }
 }

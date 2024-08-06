@@ -1,5 +1,5 @@
 import React from "react";
-import "./BatchDetail.css";
+import "../../../css/InterInput.css";
 import { useFormContext } from "react-hook-form";
 
 export default function BatchBusiness({ formData, setFormdata }) {

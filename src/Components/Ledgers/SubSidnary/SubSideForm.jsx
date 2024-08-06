@@ -49,6 +49,16 @@ export default function SubSideForm() {
     }
   };
 
+  const onSubmit = (data) => {
+    if (page === formtitle.length - 1) {
+      alert("save");
+      console.log(data);
+    } else {
+      setPage((currPage) => currPage + 1);
+      setFormData({ ...formData, ...data });
+    }
+  };
+
   return (
     <FormProvider {...methods}>
       <form
@@ -62,7 +72,7 @@ export default function SubSideForm() {
         <div className="form-footer">
           <button
             type="submit"
-            style={page == 1 ? { display: "none" } : styles}
+            className={page == 1 ? "display-button" : "general-button"}
             // onClick={() => {
             //   if (page == formtitle.length - 1) {
             //     alert("save");
@@ -89,7 +99,7 @@ export default function SubSideForm() {
             //   }
             //   setPage((currPage) => currPage + 1);
             // }}
-            style={styles}
+            className="general-button"
           >
             {page <= 1 ? "next" : "add another"}
           </button>

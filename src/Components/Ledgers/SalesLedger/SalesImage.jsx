@@ -17,15 +17,7 @@ export default function SalesImage({ salesPage, setSalesPage }) {
       <img src={CreateSales} alt="Cash ledger image" />
       <Link
         to="/platforms/ledgers/sales"
-        style={{
-          backgroundColor: "#0a3f22",
-          textDecoration: "none",
-          color: "#ffffff",
-          padding: "7px 30px",
-          borderRadius: "4px",
-          fontSize: "19px",
-          marginTop: "80px",
-        }}
+        className="general-view-btn"
         onClick={() => {
           setSalesPage((currPage) => currPage + 1);
         }}

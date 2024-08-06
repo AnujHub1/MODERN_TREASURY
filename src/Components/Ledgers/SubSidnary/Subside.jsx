@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Subside.css";
-
 import ledgerArrow from "../../../assets/arrow.png";
 import leftSide from "../../../assets/leftside.png";
 import rightSide from "../../../assets/rightSide.png";
@@ -25,7 +24,7 @@ export default function Subside() {
       </a>
       <div className="subSide-sub">
         <div className="leftside">
-          <img src={leftSide} alt="left side" />
+          <img src={leftSide} alt="left side" className="leftimg" />
         </div>
         {pageDisplay()}
         <div className="rightside">

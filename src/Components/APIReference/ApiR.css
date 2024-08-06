@@ -20,11 +20,11 @@
   justify-content: space-between;
 }
 .APIleftSide {
-  height: 290px;
+  height: 360px;
   opacity: 0.8;
 }
 .OP {
-  height: 290px;
+  height: 360px;
   opacity: 1;
 }
 /* }
@@ -45,7 +45,7 @@
   flex-direction: column;
   margin-top: 20px;
 }
-.getP {
+.api-getp {
   width: 800px;
   font-size: 20px;
   font-weight: 500;
@@ -57,7 +57,7 @@
   font-weight: 500;
 }
 
-.centerImage {
+.api-center-image {
   height: 350px;
   width: 350px;
 }
@@ -114,4 +114,117 @@ td {
   width: 500px;
   text-align: center;
   margin: auto;
+}
+.ath-table-heading {
+}
+@media (max-width: 1024px) {
+  .API-link {
+    font-size: 18px;
+  }
+  .APIleftSide img {
+    height: 370px;
+  }
+
+  .APIrightside img {
+    height: 390px;
+  }
+  .OP img {
+    height: 370px;
+  }
+
+  .OP1 img {
+    height: 390px;
+  }
+  .centerSide {
+    width: 700px;
+  }
+  .api-getp {
+    padding: 0px auto;
+    width: 600px;
+    font-size: 17px;
+  }
+}
+@media (max-width: 800px) {
+  .API-link {
+    font-size: 16px;
+  }
+  .APIleftSide img {
+    height: 330px;
+  }
+  .APIrightside img {
+    height: 350px;
+  }
+  .OP img {
+    height: 330px;
+  }
+
+  .OP1 img {
+    height: 350px;
+  }
+  .apiP {
+    width: auto;
+    padding: 0px 10px;
+    font-size: 16px;
+  }
+  .api-center-image {
+    width: 280px;
+  }
+  .api-getp {
+    width: 380px;
+    font-size: 14px;
+  }
+  .ath-heading {
+    font-size: 19px;
+  }
+  .ath-table {
+    width: 350px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 500px) {
+  .API-link {
+    font-size: 14px;
+  }
+  .api-image {
+    width: 20px;
+  }
+  .apiP {
+    font-size: 12px;
+  }
+  .api-center-image {
+    height: 200px;
+    width: 200px;
+  }
+  .APIleftSide img {
+    height: 250px;
+  }
+  .APIrightside img {
+    height: 280px;
+  }
+  .OP img {
+    height: 250px;
+  }
+
+  .OP1 img {
+    height: 280px;
+  }
+  .api_link {
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .api-getp {
+    width: 240px;
+    font-size: 12px;
+  }
+  .ath-heading {
+    font-size: 15px;
+  }
+  .ath-heading h2 {
+    font-size: 16px;
+  }
+  .ath-table {
+    width: 250px;
+    font-size: 12px;
+  }
 }

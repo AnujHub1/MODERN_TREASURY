@@ -3,7 +3,7 @@ import Btns from "./Btns";
 
 export default function Contact() {
   return (
-    <div style={{ height: "100vh" }}>
+    <div>
       <FrontImage></FrontImage>
       <div className="btns">
         <Btns data="Schedule a meet"></Btns>

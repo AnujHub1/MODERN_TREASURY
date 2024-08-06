@@ -8,7 +8,7 @@ function TalkToUs({ tabs }) {
       <p>Manage your money better with Modern Treasury Platforms</p>
       <img src={OBJECTS} alt="TALK TO US LOGO" className="object-image" />
       <Link className="talkToUS-buttn">
-        Talk to Us &nbsp;&nbsp;
+        Talk to Us&nbsp;&nbsp;
         <img src={TalkTOUsArrow} alt="TalkTOUsArrow" />
       </Link>
     </div>
