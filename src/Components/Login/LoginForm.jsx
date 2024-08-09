@@ -1,27 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 
 function LoginForm({ formdata, setFormData }) {
   const {
     register,
     handleSubmit,
-    setError,
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const navigate = useNavigate();
+  const onSubmit = (event) => {
+    event.preventDefault();
+    navigate("/home");
   };
 
   return (
     <div className="Logincontainer">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="Login-form"
-        action="/home"
-      >
+      <form onSubmit={onSubmit} className="Login-form" action="/home">
         <p className="login-para">Login</p>
         <div className="input-Div">
           <label htmlFor="username">Username</label>
