@@ -46,6 +46,44 @@ function App() {
       element: <Home />,
     },
     {
+      path: "/platforms",
+      element: (
+        <div className="container1">
+          <Navbar />
+          <HomeScreen></HomeScreen>
+        </div>
+      ),
+    },
+    {
+      path: "/resources",
+      element: (
+        <div className="container1">
+          <Navbar />
+          <HomeScreen></HomeScreen>
+        </div>
+      ),
+    },
+
+    {
+      path: "/documentation",
+      element: (
+        <div className="container1">
+          <Navbar />
+          <HomeScreen></HomeScreen>
+        </div>
+      ),
+    },
+
+    {
+      path: "/pricing",
+      element: (
+        <div className="container1">
+          <Navbar />
+          <HomeScreen></HomeScreen>
+        </div>
+      ),
+    },
+    {
       path: "/navbar",
       element: (
         <>
@@ -81,9 +119,9 @@ function App() {
       path: "/contactus",
       element: (
         <>
-          <div className="container2">
+          <div className="container1">
             <Navbar></Navbar>
-            <Contact></Contact>
+            <HomeScreen></HomeScreen>
           </div>
         </>
       ),
